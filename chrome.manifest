@@ -1,0 +1,9 @@
+content melampus-latin jar:chrome/melampus-latin.jar!/content/
+content melampus-latin jar:chrome/melampus-latin.jar!/content/ contentaccessible=yes
+locale	melampus-latin	en-US		jar:chrome/melampus-latin.jar!/locale/en-US/
+skin	melampus-latin	classic/1.0	jar:chrome/melampus-latin.jar!/skin/
+
+overlay chrome://melampus/content/melampus-overlay.xul    chrome://melampus-latin/content/melampus-latin-overlay.xul
+overlay chrome://melampus/content/melampus-prefs.xul    chrome://melampus-latin/content/melampus-latin-prefs.xul
+style   chrome://global/content/customizeToolbar.xul    chrome://melampus-latin/skin/melampus-latin.css
+

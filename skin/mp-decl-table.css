@@ -1,0 +1,159 @@
+/*
+ * CSS for Latin noun declension table
+ */
+body, th, td {
+    font-family: "Trebuchet MS", "Arial Unicode MS", sans-serif;
+    font-size: 90%;
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 110%;
+}
+
+#links a {
+    padding-right: 1em;
+}
+
+#expand-table-link {
+    display: none;
+}
+
+table#mp-infl-table {
+	border-collapse: separate;
+	border: 2px solid;
+	/*width: auto;*/
+	table-layout: fixed;
+}
+
+#mp-infl-table caption {
+    font-weight: bold;
+    text-align: left;
+}
+
+#mp-infl-table tr {
+	border: 1px solid gray;
+	padding: 2px;
+}
+
+#header-declension {
+}
+
+#header-stem {
+}
+
+#header-gender {
+}
+
+#expand-table {
+    display: none;
+}
+
+th {
+    display: none;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 2px;
+}
+td {
+    display: none;
+}
+
+th.always-visible {
+  display:table-cell;
+}
+
+tr.caserow th {
+   display:table-cell;
+   font-weight: normal;
+   font-style: italic;
+   border-left: 1px solid black;
+   border-right: none;
+}
+
+tr#header-singular td {
+    border-left: none;
+    border-right: none;    
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+tr#header-plural td {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+tr#header-plural th, tr#header-singular th {
+    border-left: 1px solid black;
+    border-right: none;
+    text-align: left;
+}
+
+
+.ending {
+    padding-left: 2px;
+    display: inline;
+    white-space: nowrap;
+}
+
+a.footnote:after, span.ending:after {
+    content: " ";
+
+}
+
+.footnote {
+    vertical-align: super;
+}
+
+
+td.highlight-ending {
+   
+}
+
+span.highlight-ending {
+    background-color: yellow;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.highlight-hover {
+   background-color: #c7b589;
+   
+}
+
+.highlight-decl {
+  background-color: yellow;
+}
+
+td.regular {
+    border-left: 1px solid gray; 
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 2px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    
+} 
+
+td.irregular{
+    border-left: 1px dashed gray; 
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 2px;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
+td.noirreg {
+   border-right: 1px solid gray;
+}
+
+th.newgender, td.newgender {
+   border-left: none; 
+}

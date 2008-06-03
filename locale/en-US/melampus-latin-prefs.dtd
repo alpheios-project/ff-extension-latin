@@ -1,0 +1,9 @@
+<!ENTITY melampus.latin.prefs.title "Latin Settings">
+<!ENTITY melampus.latin.prefs.url "Latin Services">
+<!ENTITY melampus.latin.prefs.url.lexicon "Lexicon URL">
+<!ENTITY melampus.latin.prefs.url.lexicon.request "Lexicon Request Parameters">
+<!ENTITY melampus.latin.prefs.url.lexicon.timeout "Lexicon Request Timeout">
+<!ENTITY melampus.latin.prefs.url.grammar "Grammar URL">
+<!ENTITY melampus.latin.prefs.popuptrigger "Latin:">
+<!ENTITY melampus.latin.prefs.popuptrigger.mousemove "mousemove">
+<!ENTITY melampus.latin.prefs.popuptrigger.dblclick "dblclick">

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/jquery-1.2.1.min.js"></script>
+		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/jquery.tablehover.pack.js"></script>
+		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/melampus-utils.js"></script>
+		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/melampus-decl.js"></script>
+		<script>
+function doAlert(msg) {
+	alert(msg);
+
+}
+function testDecode() {
+	$(".decode").each( function(i) {
+		alert(escape($(this).text()) + " : " + MP.decl.decode($(this).text()));
+	});
+}
+	$(document).ready(function(){
+	   var mycase = $("#mp-case").html();
+	    $("#embedded").attr("src","mp-latin-decl-" + mycase + ".html"); 
+		$("a.test-table").click(function(e){        
+			var params = { 
+	    		 suffixes: { noun: [],
+	    		             adjective: [] },
+				    word: $(".mp-word",this).text(),
+				    showcase: mycase 
+			     };
+			params.suffixes[mycase] = $(".mp-suff",this).get();
+			var iframe = $("#embedded");
+			var tbl = $("#embedded").contents().find("table");
+			MP.decl.showCols(tbl,params,['noun','adjective']);	});
+		});
+
+
+</script>			
+</head>
+<body>
+    <div id="mp-case">adjective</div>
+	<div><a class="test-table" href="javascript:void 0;">
+		<span class="mp-suff">o</span>
+		<span class="mp-suff">o</span>
+		<span class="mp-suff">o</span>
+		<span class="mp-word">circumfuso</span></a>
+	</div>
+	<div><a class="test-table" href="javascript:void 0;">
+		<span class="mp-suff">a</span>
+		<span class="mp-word">nova</span></a>
+	</div>
+	<div><a class="test-table" href="javascript:void 0;">
+		<span class="mp-suff">is</span>
+		<span class="mp-suff"></span>
+		<span class="mp-word">rudis</span></a>
+
+	</div>
+	<div><a onclick="testDecode()" href="javascript:void 0;">test decodings</a></div>
+	<div class="decode">&#257;</div>
+	<div class="decode">&#275;</div>	
+	<div class="decode">&#299;</div>
+	<div class="decode">&#333;</div>
+	<div class="decode">&#363;</div>
+	<div class="decode">&nbsp;</div>
+	<div class="decode">_</div>
+<div><a href="javascript:void 0;" id="expand-table-link">Full Table</a></div>
+<iframe id="embedded" src="about:blank" width="800" height="600"/>
+
+</body>
+</html>
+
