@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://alpheios/skin/prefs/alpheios-prefs.css/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://alpheios-latin/locale/alpheios-latin-prefs.dtd">
+<overlay id="alpheios-latin-prefs-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <prefwindow id="alpheios-prefs">
+        <prefpane id="alpheios-prefs-latin" 
+                  label="&alpheios.latin.prefs.title;" 
+                  image="">
+            <preferences>
+                <preference id="pref-latin-lexicon" 
+                        name="extensions.alpheios.latin.url.lexicon" 
+                        type="string"/>
+                <preference id="pref-latin-lexicon-request" 
+                        name="extensions.alpheios.latin.url.lexicon.request"
+                        type="string"/>
+                <preference id="pref-latin-lexicon-timeout" 
+                        name="extensions.alpheios.latin.url.lexicon.timeout" 
+                        type="int"/>
+                <preference id="pref-latin-grammar" 
+                        name="extensions.alpheios.latin.url.grammar" 
+                        type="string"/>
+            </preferences>
+            <hbox flex="1" align="center">
+                <vbox flex="1">
+                    <groupbox>
+                        <caption label="&alpheios.latin.prefs.url;"/>
+                            <label value="&alpheios.latin.prefs.url.lexicon;" 
+                                   control="latin-lexicon"/>
+                            <textbox id="latin-lexicon" 
+                                     preference="pref-latin-lexicon"/>
+                            <label value="&alpheios.latin.prefs.url.lexicon.request;" 
+                                   control="url-latin-lexicon-request"/>
+                            <textbox id="url-latin-lexicon-request" 
+                                    preference="pref-latin-lexicon-request"/>
+                            <label value="&alpheios.latin.prefs.url.lexicon.timeout;" 
+                                   control="url-latin-lexicon-timeout"/>
+                            <textbox id="url-latin-lexicon-timeout" 
+                                    preference="pref-latin-lexicon-timeout"/>      
+                            <label value="&alpheios.latin.prefs.url.grammar;" 
+                                   control="url-latin-grammar"/>
+                            <textbox id="url-latin-grammar" 
+                                    preference="pref-latin-grammar"/>      
+                    </groupbox>
+                </vbox>
+            </hbox>
+        </prefpane>
+        <!-- add the popup trigger preference the mouse tab in the alpheios prefs -->
+        <prefpane id="alpheios-prefs-mouse">
+            <preferences>
+                <preference id="latin-pref-trigger" 
+                            name="extensions.alpheios.latin.popuptrigger" 
+                            type="string"/>
+            </preferences>     
+                <hbox id="alpheios-mouse-hbox">
+                    <groupbox id="alpheios-mouse-group">
+                        <radiogroup preference="latin-pref-trigger">
+                            <caption label="&alpheios.latin.prefs.popuptrigger;"/>
+                            <radio label="&alpheios.latin.prefs.popuptrigger.mousemove;" 
+                                   value="mousemove"/>    
+                             <radio label="&alpheios.latin.prefs.popuptrigger.dblclick;" 
+                                    value="dblclick"/>
+                         </radiogroup>
+                    </groupbox>
+                </hbox>
+           </prefpane>
+    </prefwindow>
+</overlay>
