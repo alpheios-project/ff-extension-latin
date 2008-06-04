@@ -1,8 +1,8 @@
-content melampus-latin chrome/content/
-content melampus-latin chrome/content/ contentaccessible=yes
-locale	melampus-latin	en-US		chrome/locale/en-US/
-skin	melampus-latin	classic/1.0	chrome/skin/
+content alpheios-latin chrome/content/
+content alpheios-latin chrome/content/ contentaccessible=yes
+locale	alpheios-latin	en-US		chrome/locale/en-US/
+skin	alpheios-latin	classic/1.0	chrome/skin/
 
-overlay chrome://melampus/content/melampus-overlay.xul    chrome://melampus-latin/content/melampus-latin-overlay.xul
-overlay chrome://melampus/content/melampus-prefs.xul    chrome://melampus-latin/content/melampus-latin-prefs.xul
-style	chrome://global/content/customizeToolbar.xul	chrome://melampus-latin/skin/melampus-latin.css
+overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin-overlay.xul
+overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-latin/skin/alpheios-latin.css

@@ -4,8 +4,8 @@
 	<head>
 		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/jquery-1.2.1.min.js"></script>
 		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/jquery.tablehover.pack.js"></script>
-		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/melampus-utils.js"></script>
-		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/melampus-decl.js"></script>
+		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/alpheios-utils.js"></script>
+		<script type="text/javascript" src="file:///C:/work/xlatepopup/content/alpheios-decl.js"></script>
 		<script>
 function doAlert(msg) {
 	alert(msg);
@@ -13,44 +13,44 @@ function doAlert(msg) {
 }
 function testDecode() {
 	$(".decode").each( function(i) {
-		alert(escape($(this).text()) + " : " + MP.decl.decode($(this).text()));
+		alert(escape($(this).text()) + " : " + Alph.decl.decode($(this).text()));
 	});
 }
 	$(document).ready(function(){
-	   var mycase = $("#mp-case").html();
-	    $("#embedded").attr("src","mp-latin-decl-" + mycase + ".html"); 
+	   var mycase = $("#alph-case").html();
+	    $("#embedded").attr("src","alph-latin-decl-" + mycase + ".html"); 
 		$("a.test-table").click(function(e){        
 			var params = { 
 	    		 suffixes: { noun: [],
 	    		             adjective: [] },
-				    word: $(".mp-word",this).text(),
+				    word: $(".alph-word",this).text(),
 				    showcase: mycase 
 			     };
-			params.suffixes[mycase] = $(".mp-suff",this).get();
+			params.suffixes[mycase] = $(".alph-suff",this).get();
 			var iframe = $("#embedded");
 			var tbl = $("#embedded").contents().find("table");
-			MP.decl.showCols(tbl,params,['noun','adjective']);	});
+			Alph.decl.showCols(tbl,params,['noun','adjective']);	});
 		});
 
 
 </script>			
 </head>
 <body>
-    <div id="mp-case">adjective</div>
+    <div id="alph-case">adjective</div>
 	<div><a class="test-table" href="javascript:void 0;">
-		<span class="mp-suff">o</span>
-		<span class="mp-suff">o</span>
-		<span class="mp-suff">o</span>
-		<span class="mp-word">circumfuso</span></a>
+		<span class="alph-suff">o</span>
+		<span class="alph-suff">o</span>
+		<span class="alph-suff">o</span>
+		<span class="alph-word">circumfuso</span></a>
 	</div>
 	<div><a class="test-table" href="javascript:void 0;">
-		<span class="mp-suff">a</span>
-		<span class="mp-word">nova</span></a>
+		<span class="alph-suff">a</span>
+		<span class="alph-word">nova</span></a>
 	</div>
 	<div><a class="test-table" href="javascript:void 0;">
-		<span class="mp-suff">is</span>
-		<span class="mp-suff"></span>
-		<span class="mp-word">rudis</span></a>
+		<span class="alph-suff">is</span>
+		<span class="alph-suff"></span>
+		<span class="alph-word">rudis</span></a>
 
 	</div>
 	<div><a onclick="testDecode()" href="javascript:void 0;">test decodings</a></div>

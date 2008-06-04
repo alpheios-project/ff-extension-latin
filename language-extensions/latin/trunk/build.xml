@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 
-<project name="melampus-latin" default="package" basedir=".">
+<project name="alpheios-latin" default="package" basedir=".">
 	<property name="src.dir" value="." />
 	<property name="dist.dir" value="dist" />
-	<property name="app.name" value="melampus-latin" />
+	<property name="app.name" value="alpheios-latin" />
 	<property name="ff.test.dir" value="/test" />
 	<property name="ext.test.dir" 
 	          value="${ff.test.dir}/extensions/${app.name}" />
 	<property name="deploy.dir"
-              value="/Program Files/Apache Group/Apache2/htdocs/melampus" />
+              value="/Program Files/Apache Group/Apache2/htdocs/alpheios" />
 	<property name="release.id" value="0.1" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
 	<property name="package" value="${app.name}-${release.id}.xpi"/>
