@@ -1,9 +1,9 @@
-content melampus-latin jar:chrome/melampus-latin.jar!/content/
-content melampus-latin jar:chrome/melampus-latin.jar!/content/ contentaccessible=yes
-locale	melampus-latin	en-US		jar:chrome/melampus-latin.jar!/locale/en-US/
-skin	melampus-latin	classic/1.0	jar:chrome/melampus-latin.jar!/skin/
+content alpheios-latin jar:chrome/alpheios-latin.jar!/content/
+content alpheios-latin jar:chrome/alpheios-latin.jar!/content/ contentaccessible=yes
+locale	alpheios-latin	en-US		jar:chrome/alpheios-latin.jar!/locale/en-US/
+skin	alpheios-latin	classic/1.0	jar:chrome/alpheios-latin.jar!/skin/
 
-overlay chrome://melampus/content/melampus-overlay.xul    chrome://melampus-latin/content/melampus-latin-overlay.xul
-overlay chrome://melampus/content/melampus-prefs.xul    chrome://melampus-latin/content/melampus-latin-prefs.xul
-style   chrome://global/content/customizeToolbar.xul    chrome://melampus-latin/skin/melampus-latin.css
+overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin-overlay.xul
+overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
+style   chrome://global/content/customizeToolbar.xul    chrome://alpheios-latin/skin/alpheios-latin.css
 
