@@ -25,7 +25,19 @@
     <!-- all parameters may be supplied in transformation -->
     <!-- row groupings --> 
     <!-- default order is Tense, Number, Person -->
-    <xsl:param name="group1" select="'tense'"/>
+    <!-- mood (required) -->
+    <xsl:param name="mood" select="'imperative'"/>
+    
+    <xsl:param name="group1">
+        <xsl:choose>
+            <xsl:when test="$mood='gerundive' or $mood='supine'">
+                <xsl:value-of select="'case'"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="'tense'"/>    
+            </xsl:otherwise>
+        </xsl:choose>            
+    </xsl:param>
     <xsl:param name="group2" select="'num'"/>
     <xsl:param name="group3" select="'person'"/>
     
@@ -34,11 +46,29 @@
     <xsl:param name="group4" select="'voice'"/>
     <xsl:param name="group5" select="'conj'"/>
 
-    <!-- mood (required) -->
-    <xsl:param name="mood" select="'imperative'"/>
-    
     <!-- the following is optional, used to select specific verb-ending(s) -->
     <xsl:param name="selected_endings" select="/.." />
+    
+    <!-- debug -->
+    <!--xsl:param name="test_endings">
+        <div class="alph-entry">
+            <div class="alph-dict">
+                <span class="alph-hdwd">sono, sonere, sonui, sonitus: </span>
+                <span context="verb" class="alph-pofs">verb</span>
+                <span context="3rd" class="alph-conj">3rd conjugation</span>
+                <span class="alph-attrlist">(early, very frequent)</span>
+                <span class="alph-src">[Ox.Lat.Dict.]</span>
+            </div>
+            <div class="alph-mean">make a noise/sound; speak/utter, emit sound; be spoken of (as); express/denote;</div>
+            <div class="alph-mean">echo/resound; be heard, sound; be spoken of (as); celebrate in speech;</div>
+            <div class="alph-infl-set">
+                <span class="alph-term">sonit•<span class="alph-suff">u</span></span>
+                <span context="supine" class="alph-pofs">(supine)</span>
+                <div class="alph-infl">Singular: <span context="ablative-singular-neuter-supine" class="alph-case">ablative (n)</span></div>
+            </div>
+        </div>
+    </xsl:param>
+    <xsl:param name='selected_endings' select="exsl:node-set($test_endings)"/-->
     
     <!-- skip the enclosing html and body tags -->
     <xsl:param name="fragment" />
@@ -147,23 +177,25 @@
                             <xsl:with-param name="headerrow1" select="//order-item[@attname=$group4]"/>
                             <xsl:with-param name="headerrow2" select="//order-item[@attname=$group5]"/>
                         </xsl:call-template>        
-                    </tr>                   
+                    </tr>
+                    <!-- if none in 2nd group, just add the items in the first group -->                    
                     <xsl:if test="count($secondgroup) = 0">
                         <tr class="data-row">
                             <th class="emptyheader" colspan="2">&#160;</th>
-                            <!-- if none in 2nd group, just add the items in the first group -->
                             <xsl:for-each select="$endings/@*[local-name(.)=$group1 and .=$lastgroup1]/..">
+                                <xsl:variable name="selected">
+                                    <xsl:call-template name="check_infl_sets">
+                                        <xsl:with-param name="current_data" select="." />
+                                    </xsl:call-template>
+                                </xsl:variable>                                
                                 <xsl:call-template name="ending-cell">
                                     <xsl:with-param name="verb-endings" select="verb-ending"/>
+                                    <xsl:with-param name="selected" select="$selected"/>
                                 </xsl:call-template>                                    
                             </xsl:for-each>
                         </tr>
                     </xsl:if>                                         
                     
-                    <!-- if none in 2nd group, just add the items in the first group -->
-                    <xsl:if test="count($secondgroup) = 0">
-                        
-                    </xsl:if>   
                     <!-- iterate through the items in the second group -->
                     <xsl:for-each select="$secondgroup">
                         <xsl:sort select="/conjdata/order-table/order-item[@attname=$group2 
@@ -195,9 +227,15 @@
                                              select="/conjdata/order-table/order-item[@attname=$group2 
                                              and text()=$lastgroup2]"/>
                                          </xsl:call-template>
-                                     </th>                                        
+                                    </th>
+                                    <xsl:variable name="selected">
+                                        <xsl:call-template name="check_infl_sets">
+                                            <xsl:with-param name="current_data" select="." />
+                                        </xsl:call-template>
+                                    </xsl:variable>                                    
                                     <xsl:call-template name="ending-cell">
                                         <xsl:with-param name="verb-endings" select="verb-ending"/>
+                                        <xsl:with-param name="selected" select="$selected"/>
                                     </xsl:call-template>                                    
                                 </xsl:for-each>
                             </xsl:if> 
@@ -277,18 +315,26 @@
                     </xsl:call-template>
                 </th>
             </xsl:if>
+            <xsl:variable name="selected">
+                <xsl:call-template name="check_infl_sets">
+                    <xsl:with-param name="current_data" select="current()" />
+                </xsl:call-template>
+            </xsl:variable>            
             <xsl:call-template name="ending-cell">
                 <xsl:with-param name="verb-endings" select="verb-ending"/>
+                <xsl:with-param name="selected" select="$selected"/>
             </xsl:call-template>
         </xsl:for-each>        
     </xsl:template>
     
     <xsl:template name="ending-cell">
         <xsl:param name="verb-endings"/>
+        <xsl:param name="selected"/>
+        <!--div class="debug_sel"><xsl:value-of select="$selected"/></div-->
         <td>
         <xsl:for-each select="$verb-endings">
-            <xsl:variable name="entries" select="count($selected_endings/div[@class='alph-entry'])"/>                    
-                <xsl:variable name="selected">
+            <xsl:variable name="entries" select="count($selected_endings/div[@class='alph-entry'])"/>
+                <xsl:variable name="selected-x">
                     <xsl:choose>
                         <xsl:when test="$mood = 'participle'">
                             <!-- participle: match on conj, voice and tense, mood is already filtered -->
@@ -465,5 +511,91 @@
             <a href="#{$item/@footnote}" class="footnote"><xsl:value-of select="substring-after($item/@footnote,'-')"/></a>
             <span class="footnote-text"><xsl:value-of select="key('footnotes',$item/@footnote)"/></span>    
         </xsl:if>
+    </xsl:template>    
+    
+    <xsl:template name="check_infl_sets">
+        <xsl:param name="current_data"/>
+        <xsl:variable name="matches">
+            <xsl:for-each select="$selected_endings//div[@class='alph-infl-set' and 
+                ../div[@class='alph-dict']/span[(@class='alph-conj') and (@context = $current_data/@conj)]]
+                ">
+                <xsl:for-each select="div[@class='alph-infl']">
+                    <xsl:call-template name="find_infl_match">
+                        <xsl:with-param name="current_data" select="$current_data"/>
+                        <xsl:with-param name="filtered_data" select="(.)"/>
+                    </xsl:call-template>
+                </xsl:for-each>
+            </xsl:for-each>    
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="contains($matches,'1')">
+                1
+            </xsl:when>
+            <xsl:otherwise>
+                0
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="find_infl_match">
+        <xsl:param name="current_data"/>
+        <xsl:param name="filtered_data"/>
+        <xsl:param name="att_pos" select="0"/>
+        <xsl:variable name="num_atts" select="count($current_data/@*)"/>
+        <xsl:choose> 
+            <xsl:when test="$att_pos = $num_atts">
+                <!-- if we have tested all the possible attributes return the match count-->
+                <xsl:value-of select="count($filtered_data)"/>
+            </xsl:when>
+            <xsl:when test="($att_pos &lt; $num_atts) and $filtered_data">
+                <!-- variables are: voice, mood, tense, num, person, and case -->
+                <!-- only try match if current conjugation data element has the attribute -->
+                <xsl:for-each select="$current_data/@*">
+                    <xsl:if test="position() = $att_pos + 1">
+                        <xsl:variable name="att_name" select="name()"/>
+                        <xsl:choose>
+                            <xsl:when test="$att_name = 'conj' or ($mood = 'supine' and ($att_name = 'voice' or $att_name='mood'))">
+                                <!-- TODO gerundives and participles still not accounted for -->
+                                <!-- just advance the counter for the ones we're skipping -->
+                                <xsl:call-template name="find_infl_match">
+                                    <xsl:with-param name="current_data" select="$current_data"/>
+                                    <xsl:with-param name="filtered_data" 
+                                        select="$filtered_data"/>
+                                    <xsl:with-param name="att_pos" select="$att_pos+1"/>                           
+                                </xsl:call-template>                                
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:variable name="class_name">
+                                    <xsl:choose>
+                                        <xsl:when test="$att_name='person'">
+                                            <xsl:value-of select="'alph-pers'"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="concat('alph-',$att_name)"/>        
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:variable name="latest_data"
+                                    select="$filtered_data[
+                                    ((span[@class=$class_name]/text() = $current_data/@*[local-name(.)=$att_name])
+                                    or
+                                    (span[@class=$class_name]/@context = $current_data/@*[local-name(.)=$att_name])
+                                    or
+                                    
+                                    ($att_name='case' and substring-before(span[@class=$class_name]/@context,'-') = $current_data/@*[local-name(.)=$att_name])
+                                 )]"/>
+                                <xsl:call-template name="find_infl_match">
+                                    <xsl:with-param name="current_data" select="$current_data"/>
+                                    <xsl:with-param name="filtered_data" 
+                                        select="$latest_data"/>
+                                    <xsl:with-param name="att_pos" select="$att_pos+1"/>                           
+                                </xsl:call-template>                                
+                            </xsl:otherwise>
+                        </xsl:choose>                                        
+                    </xsl:if>
+                </xsl:for-each>                
+            </xsl:when>
+            <xsl:otherwise>0</xsl:otherwise>
+        </xsl:choose>
     </xsl:template>    
 </xsl:stylesheet>
