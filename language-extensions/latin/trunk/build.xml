@@ -9,7 +9,7 @@
 	          value="${ff.test.dir}/extensions/${app.name}" />
 	<property name="deploy.dir"
               value="/Program Files/Apache Group/Apache2/htdocs/alpheios" />
-	<property name="release.id" value="0.1" />
+	<property name="release.id" value="0.2" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
 	<property name="package" value="${app.name}-${release.id}.xpi"/>
 	<property name="extras" value="grammar,wordsxml"/>
