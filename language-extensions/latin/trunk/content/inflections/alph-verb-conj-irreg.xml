@@ -373,7 +373,7 @@
       num="plural" 
       person="3rd" 
       tense="perfect" >
-      <verb-conj type="regular">fuerunt</verb-conj>
+      <verb-conj type="regular">fuērunt</verb-conj>
       <verb-conj type="irregular">fuēre</verb-conj>
     </verb-conj-set>
     <verb-conj-set
@@ -555,7 +555,7 @@
     </verb-conj-set>    
   </conjugation>  
   <conjugation> 
-  <!-- ferO -->  
+  <!-- ferō -->  
     <hdwd-set>
       <hdwd source="whitaker">fero, ferre, tuli, latus</hdwd>
     </hdwd-set>
@@ -566,7 +566,7 @@
         person="1st" 
         tense="present"
         voice="active">
-      <verb-conj type="regular">ferO</verb-conj>
+      <verb-conj type="regular">ferō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -622,7 +622,7 @@
       person="2nd" 
       tense="present" 
       voice="active">
-      <verb-conj type="regular">ferAs</verb-conj>
+      <verb-conj type="regular">ferās</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -638,7 +638,7 @@
       person="1st" 
       tense="present"
       voice="active">
-      <verb-conj type="regular">ferAmus</verb-conj>
+      <verb-conj type="regular">ferāmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -646,7 +646,7 @@
       person="2nd" 
       tense="present" 
       voice="active">
-      <verb-conj type="regular">ferAtis</verb-conj>
+      <verb-conj type="regular">ferātis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -666,24 +666,12 @@
     </verb-conj-set>
     <verb-conj-set
       mood="imperative"
-      num="singular"
-      person="3rd"
-      tense="present"
-      voice="active"/>
-    <verb-conj-set
-      mood="imperative"
       num="plural"
       person="2nd"
       tense="present"
       voice="active">
       <verb-conj type="regular">ferte</verb-conj>
     </verb-conj-set>
-    <verb-conj-set
-      mood="imperative"
-      num="plural"
-      person="3rd"
-      tense="present"
-      voice="active"/>
     <verb-conj-set
       mood="infinitive"
       tense="present"
@@ -730,7 +718,7 @@
       person="2nd" 
       tense="present"
       voice="passive">
-      <verb-conj type="regular">feriminI</verb-conj>
+      <verb-conj type="regular">feriminī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -754,8 +742,8 @@
       person="2nd" 
       tense="present" 
       voice="passive">
-      <verb-conj type="regular">ferAris</verb-conj>
-      <verb-conj type="irregular">ferAre</verb-conj>
+      <verb-conj type="regular">ferāris</verb-conj>
+      <verb-conj type="irregular">ferāre</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -763,7 +751,7 @@
       person="3rd" 
       tense="present"
       voice="passive">
-      <verb-conj type="regular">ferAtur</verb-conj>
+      <verb-conj type="regular">ferātur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -771,7 +759,7 @@
       person="1st" 
       tense="present"
       voice="passive">
-      <verb-conj type="regular">ferAmur</verb-conj>
+      <verb-conj type="regular">ferāmur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -779,7 +767,7 @@
       person="2nd" 
       tense="present" 
       voice="passive">
-      <verb-conj type="regular">ferAminI</verb-conj>
+      <verb-conj type="regular">ferāminī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -799,35 +787,23 @@
     </verb-conj-set>
     <verb-conj-set
       mood="imperative"
-      num="singular"
-      person="3rd"
-      tense="present"
-      voice="passive"/>
-    <verb-conj-set
-      mood="imperative"
       num="plural"
       person="2nd"
       tense="present"
       voice="passive">
-      <verb-conj type="regular">feriminI</verb-conj>
+      <verb-conj type="regular">feriminī</verb-conj>
     </verb-conj-set>
-    <verb-conj-set
-      mood="imperative"
-      num="plural"
-      person="3rd"
-      tense="present"
-      voice="passive"/>
     <verb-conj-set
       mood="infinitive"
       tense="present"
       voice="passive">
-      <verb-conj type="regular">ferrI</verb-conj>
+      <verb-conj type="regular">ferrī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="participle"
       tense="present"
       voice="active">
-      <verb-conj type="regular">ferEns</verb-conj>
+      <verb-conj type="regular">ferēns</verb-conj>
       <verb-conj type="irregular">-entis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
@@ -841,7 +817,7 @@
       person="1st" 
       tense="imperfect"
       voice="active">
-      <verb-conj type="regular">ferEbam</verb-conj>
+      <verb-conj type="regular">ferēbam</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -849,7 +825,7 @@
       person="2nd" 
       tense="imperfect"
       voice="active">
-      <verb-conj type="regular">ferEbas</verb-conj>
+      <verb-conj type="regular">ferēbās</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -857,7 +833,7 @@
       person="3rd" 
       tense="imperfect"
       voice="active">
-      <verb-conj type="regular">ferEbat</verb-conj>
+      <verb-conj type="regular">ferēbat</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -865,7 +841,7 @@
       person="1st" 
       tense="imperfect"
       voice="active">
-      <verb-conj type="regular">ferEbAmus</verb-conj>
+      <verb-conj type="regular">ferēbāmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -873,7 +849,7 @@
       person="2nd" 
       tense="imperfect" 
       voice="active">
-      <verb-conj type="regular">ferEbAtis</verb-conj>
+      <verb-conj type="regular">ferēbātis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -881,7 +857,7 @@
       person="3rd" 
       tense="imperfect" 
       voice="active">
-      <verb-conj type="regular">ferEbant</verb-conj>
+      <verb-conj type="regular">ferēbant</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -897,7 +873,7 @@
       person="2nd" 
       tense="imperfect" 
       voice="active">
-      <verb-conj type="regular">ferrEs</verb-conj>
+      <verb-conj type="regular">ferrēs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -913,7 +889,7 @@
       person="1st" 
       tense="imperfect"
       voice="active">
-      <verb-conj type="regular">ferrEmus</verb-conj>
+      <verb-conj type="regular">ferrēmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -921,7 +897,7 @@
       person="2nd" 
       tense="imperfect" 
       voice="active">
-      <verb-conj type="regular">ferrEtis</verb-conj>
+      <verb-conj type="regular">ferrētis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -938,7 +914,7 @@
       person="1st" 
       tense="imperfect"
       voice="passive">
-      <verb-conj type="regular">ferEbar</verb-conj>
+      <verb-conj type="regular">ferēbar</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -946,8 +922,8 @@
       person="2nd" 
       tense="imperfect"
       voice="passive">
-      <verb-conj type="regular">ferEbAris</verb-conj>
-      <verb-conj type="irregular">ferEbAre</verb-conj>
+      <verb-conj type="regular">ferēbāris</verb-conj>
+      <verb-conj type="irregular">ferēbāre</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -955,7 +931,7 @@
       person="3rd" 
       tense="imperfect"
       voice="passive">
-      <verb-conj type="regular">ferEbAtur</verb-conj>
+      <verb-conj type="regular">ferēbātur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -963,7 +939,7 @@
       person="1st" 
       tense="imperfect"
       voice="passive">
-      <verb-conj type="regular">ferEbAmur</verb-conj>
+      <verb-conj type="regular">ferēbāmur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -971,7 +947,7 @@
       person="2nd" 
       tense="imperfect" 
       voice="passive">
-      <verb-conj type="regular">ferEbAminI</verb-conj>
+      <verb-conj type="regular">ferēbāminī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -979,7 +955,7 @@
       person="3rd" 
       tense="imperfect" 
       voice="passive">
-      <verb-conj type="regular">ferEbantur</verb-conj>
+      <verb-conj type="regular">ferēbantur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -995,8 +971,8 @@
       person="2nd" 
       tense="imperfect" 
       voice="passive">
-      <verb-conj type="regular">ferrEris</verb-conj>
-      <verb-conj type="irregular">ferrEre</verb-conj>
+      <verb-conj type="regular">ferrēris</verb-conj>
+      <verb-conj type="irregular">ferrēre</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1004,7 +980,7 @@
       person="3rd" 
       tense="imperfect"
       voice="passive">
-      <verb-conj type="regular">ferrEtur</verb-conj>
+      <verb-conj type="regular">ferrētur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1012,7 +988,7 @@
       person="1st" 
       tense="imperfect"
       voice="passive">
-      <verb-conj type="regular">ferrEmur</verb-conj>
+      <verb-conj type="regular">ferrēmur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1020,7 +996,7 @@
       person="2nd" 
       tense="imperfect" 
       voice="passive">
-      <verb-conj type="regular">ferrEminI</verb-conj>
+      <verb-conj type="regular">ferrēminī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1045,7 +1021,7 @@
       person="2nd" 
       tense="future" 
       voice="active">
-      <verb-conj type="regular">ferEs</verb-conj>
+      <verb-conj type="regular">ferēs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1061,7 +1037,7 @@
       person="1st" 
       tense="future"
       voice="active">
-      <verb-conj type="regular">ferEmus</verb-conj>
+      <verb-conj type="regular">ferēmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1069,7 +1045,7 @@
       person="2nd" 
       tense="future" 
       voice="active">
-      <verb-conj type="regular">ferEtis</verb-conj>
+      <verb-conj type="regular">ferētis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1093,8 +1069,8 @@
       person="2nd" 
       tense="future" 
       voice="passive">
-      <verb-conj type="regular">ferEris</verb-conj>
-      <verb-conj type="irregular">ferEre</verb-conj>
+      <verb-conj type="regular">ferēris</verb-conj>
+      <verb-conj type="irregular">ferēre</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1102,7 +1078,7 @@
       person="3rd" 
       tense="future" 
       voice="passive">
-      <verb-conj type="regular">ferEtur</verb-conj>
+      <verb-conj type="regular">ferētur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1110,7 +1086,7 @@
       person="1st" 
       tense="future"
       voice="passive">
-      <verb-conj type="regular">ferEmur</verb-conj>
+      <verb-conj type="regular">ferēmur</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1118,7 +1094,7 @@
       person="2nd" 
       tense="future" 
       voice="passive">
-      <verb-conj type="regular">ferEminI</verb-conj>
+      <verb-conj type="regular">ferēminī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1134,7 +1110,7 @@
       person="2nd"
       tense="future"
       voice="active">
-      <verb-conj type="regular">fertO</verb-conj>
+      <verb-conj type="regular">fertō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="imperative"
@@ -1142,7 +1118,7 @@
       person="3rd"
       tense="future"
       voice="active">
-      <verb-conj type="regular">fertOte</verb-conj>
+      <verb-conj type="regular">fertōte</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="imperative"
@@ -1150,7 +1126,7 @@
       person="2nd"
       tense="future"
       voice="active">
-      <verb-conj type="regular">fertO</verb-conj>
+      <verb-conj type="regular">fertō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="imperative"
@@ -1158,7 +1134,7 @@
       person="3rd"
       tense="future"
       voice="active">
-      <verb-conj type="regular">feruntO</verb-conj>
+      <verb-conj type="regular">feruntō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="imperative"
@@ -1194,19 +1170,19 @@
       mood="infinitive"
       tense="future"
       voice="active">
-      <verb-conj type="regular">latUrus esse</verb-conj>
+      <verb-conj type="regular">latūrus esse</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="infinitive"
       tense="future"
       voice="passive">
-      <verb-conj type="regular">latUm IrI</verb-conj>
+      <verb-conj type="regular">latūm īrī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="participle"
       tense="future"
       voice="active">
-      <verb-conj type="regular">latUrus</verb-conj>
+      <verb-conj type="regular">latūrus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="participle"
@@ -1221,7 +1197,7 @@
       person="1st" 
       tense="perfect"
       voice="active">
-      <verb-conj type="regular">tulI</verb-conj>
+      <verb-conj type="regular">tulī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1229,7 +1205,7 @@
       person="2nd" 
       tense="perfect"
       voice="active">
-      <verb-conj type="regular">tulistI</verb-conj>
+      <verb-conj type="regular">tulistī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1261,7 +1237,7 @@
       person="3rd" 
       tense="perfect" 
       voice="active">
-      <verb-conj type="regular">tulErunt</verb-conj>
+      <verb-conj type="regular">tulērunt</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1277,7 +1253,7 @@
       person="2nd" 
       tense="perfect"
       voice="active">
-      <verb-conj type="regular">tulerIs</verb-conj>
+      <verb-conj type="regular">tulerīs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1318,7 +1294,7 @@
       person="1st" 
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, um) sum</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) sum</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1326,7 +1302,7 @@
       person="2nd" 
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, um) es</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) es</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1334,7 +1310,7 @@
       person="3rd" 
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, um) est</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) est</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1342,7 +1318,7 @@
       person="1st" 
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) erAmus</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) sumus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1350,7 +1326,7 @@
       person="2nd" 
       tense="perfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) erAtis</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) estis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1358,7 +1334,7 @@
       person="3rd" 
       tense="perfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) erant</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) sunt</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1366,7 +1342,7 @@
       person="1st" 
       tense="perfect" 
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, um) sim</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) sim</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1374,7 +1350,7 @@
       person="2nd" 
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, um) sIs</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) sīs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1382,7 +1358,7 @@
       person="3rd" 
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, um)sit</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um)sit</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1390,7 +1366,7 @@
       person="1st" 
       tense="perfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) sImus</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) sīmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1398,7 +1374,7 @@
       person="2nd" 
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) sItis</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) sītis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1406,7 +1382,7 @@
       person="3rd" 
       tense="perfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a)sint</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a)sint</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="infinitive"
@@ -1418,7 +1394,7 @@
       mood="infinitive"
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus esse</verb-conj>
+      <verb-conj type="regular">lātus esse</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="participle"
@@ -1428,7 +1404,7 @@
       mood="participle"
       tense="perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus, -ta, -tum</verb-conj>
+      <verb-conj type="regular" footnote="Footnote-8">lātus, -ta, -tum</verb-conj>
     </verb-conj-set>
     <!-- Pluperfect -->
     <verb-conj-set
@@ -1445,7 +1421,7 @@
       person="2nd" 
       tense="pluperfect"
       voice="active">
-      <verb-conj type="regular">tulerAs</verb-conj>
+      <verb-conj type="regular">tulerās</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1461,7 +1437,7 @@
       person="1st" 
       tense="pluperfect"
       voice="active">
-      <verb-conj type="regular">tulerAmus</verb-conj>
+      <verb-conj type="regular">tulerāmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1469,7 +1445,7 @@
       person="2nd" 
       tense="pluperfect" 
       voice="active">
-      <verb-conj type="regular">tulerAtis</verb-conj>
+      <verb-conj type="regular">tulerātis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1493,7 +1469,7 @@
       person="2nd" 
       tense="pluperfect" 
       voice="active">
-      <verb-conj type="regular">tulissEs</verb-conj>
+      <verb-conj type="regular">tulissēs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1509,7 +1485,7 @@
       person="1st" 
       tense="pluperfect" 
       voice="active">
-      <verb-conj type="regular">tulissEmus</verb-conj>
+      <verb-conj type="regular">tulissēmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1517,7 +1493,7 @@
       person="2nd" 
       tense="pluperfect"
       voice="active">
-      <verb-conj type="regular">tulissEtis</verb-conj>
+      <verb-conj type="regular">tulissētis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1534,7 +1510,7 @@
       person="1st" 
       tense="pluperfect" 
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) eram</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) eram</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1542,7 +1518,7 @@
       person="2nd" 
       tense="pluperfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) erAs</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) erās</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1550,7 +1526,7 @@
       person="3rd" 
       tense="pluperfect" 
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) erat</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) erat</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1558,7 +1534,7 @@
       person="1st" 
       tense="pluperfect"
       voice="passive">
-      <verb-conj type="regular">latI (-ae, a) erAmus</verb-conj>
+      <verb-conj type="regular">latī (-ae, a) erāmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1566,7 +1542,7 @@
       person="2nd" 
       tense="pluperfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, a) erAtis</verb-conj>
+      <verb-conj type="regular">latī (-ae, a) erātis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1574,7 +1550,7 @@
       person="3rd" 
       tense="pluperfect"
       voice="passive">
-      <verb-conj type="regular">latI (-ae, a) erant</verb-conj>
+      <verb-conj type="regular">latī (-ae, a) erant</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1582,7 +1558,7 @@
       person="1st" 
       tense="pluperfect" 
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) essem</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) essem</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1590,7 +1566,7 @@
       person="2nd" 
       tense="pluperfect" 
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) essEs</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) essēs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1598,7 +1574,7 @@
       person="3rd" 
       tense="pluperfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) esset</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) esset</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1606,7 +1582,7 @@
       person="1st" 
       tense="pluperfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) essEmus</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) essēmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1614,7 +1590,7 @@
       person="2nd" 
       tense="pluperfect"
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) essEtis</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) essētis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1622,7 +1598,7 @@
       person="3rd" 
       tense="pluperfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) essent</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) essent</verb-conj>
     </verb-conj-set>
     <!-- Future Perfect -->
     <verb-conj-set
@@ -1631,7 +1607,7 @@
       person="1st" 
       tense="future perfect"
       voice="active">
-      <verb-conj type="regular">tulerO</verb-conj>
+      <verb-conj type="regular">tulerō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1679,7 +1655,7 @@
       person="1st" 
       tense="future perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) erO</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) erō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1687,7 +1663,7 @@
       person="2nd" 
       tense="future perfect"
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) eris</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) eris</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1695,7 +1671,7 @@
       person="3rd" 
       tense="future perfect" 
       voice="passive">
-      <verb-conj type="regular">lAtus (-a, -um) erit</verb-conj>
+      <verb-conj type="regular">lātus (-a, -um) erit</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1703,7 +1679,7 @@
       person="1st" 
       tense="future perfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) erimus</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) erimus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1711,7 +1687,7 @@
       person="2nd" 
       tense="future perfect"
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) Eritis</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) ēritis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1719,18 +1695,18 @@
       person="3rd" 
       tense="future perfect" 
       voice="passive">
-      <verb-conj type="regular">latI (-ae, -a) Erunt</verb-conj>
+      <verb-conj type="regular">latī (-ae, -a) ērunt</verb-conj>
     </verb-conj-set>    
     <!-- Gerundive -->
     <verb-conj-set
       mood="gerundive"
       case="genitive">
-      <verb-conj type="regular" footnote="Footnote-5">ferendI</verb-conj>
+      <verb-conj type="regular" footnote="Footnote-5">ferendī</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="gerundive"
       case="dative">
-      <verb-conj type="regular">ferendO</verb-conj>
+      <verb-conj type="regular">ferendō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="gerundive"
@@ -1740,23 +1716,23 @@
     <verb-conj-set
       mood="gerundive"
       case="ablative">
-      <verb-conj type="regular">ferendO</verb-conj>
+      <verb-conj type="regular">ferendō</verb-conj>
     </verb-conj-set>
     <!-- Supine -->
     <verb-conj-set
       mood="supine"
       case="accusative">
-      <verb-conj type="regular" footnote="Footnote-5">lAtum</verb-conj>
+      <verb-conj type="regular" footnote="Footnote-5">lātum</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="supine"
       case="dative">
-      <verb-conj type="regular">lAtU</verb-conj>
+      <verb-conj type="regular">lātū</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="supine"
       case="ablative">
-      <verb-conj type="regular">lAtU</verb-conj>
+      <verb-conj type="regular">lātū</verb-conj>
     </verb-conj-set>
   </conjugation>
   <conjugation footnote="Footnote-6">
@@ -1770,14 +1746,14 @@
         num="singular" 
         person="1st" 
         tense="present" >
-      <verb-conj type="regular">volO</verb-conj>
+      <verb-conj type="regular">volō</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
       num="singular" 
       person="2nd" 
       tense="present" >
-      <verb-conj type="regular">vIs</verb-conj>
+      <verb-conj type="regular">vīs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1858,7 +1834,7 @@
     <verb-conj-set
       mood="participle"
       tense="present">
-      <verb-conj type="regular">volEns</verb-conj>
+      <verb-conj type="regular">volēns</verb-conj>
       <verb-conj type="irregular">-entis</verb-conj>
     </verb-conj-set>    
     <!-- Imperfect -->
@@ -1867,42 +1843,42 @@
       num="singular" 
       person="1st" 
       tense="imperfect" >
-      <verb-conj type="regular">volEbam</verb-conj>
+      <verb-conj type="regular">volēbam</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
       num="singular" 
       person="2nd" 
       tense="imperfect" >
-      <verb-conj type="regular">volEbās</verb-conj>
+      <verb-conj type="regular">volēbās</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
       num="singular" 
       person="3rd" 
       tense="imperfect" >
-      <verb-conj type="regular">volEbat</verb-conj>
+      <verb-conj type="regular">volēbat</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
       num="plural" 
       person="1st" 
       tense="imperfect" >
-      <verb-conj type="regular">volEbāmus</verb-conj>
+      <verb-conj type="regular">volēbāmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
       num="plural" 
       person="2nd" 
       tense="imperfect" >
-      <verb-conj type="regular">volEbātis</verb-conj>
+      <verb-conj type="regular">volēbātis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
       num="plural" 
       person="3rd" 
       tense="imperfect" >
-      <verb-conj type="regular">volEbant</verb-conj>
+      <verb-conj type="regular">volēbant</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -1959,7 +1935,7 @@
       num="singular" 
       person="2nd" 
       tense="future" >
-      <verb-conj type="regular">volEs</verb-conj>
+      <verb-conj type="regular">volēs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -1973,14 +1949,14 @@
       num="plural" 
       person="1st" 
       tense="future" >
-      <verb-conj type="regular">volEmus</verb-conj>
+      <verb-conj type="regular">volēmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
       num="plural" 
       person="2nd" 
       tense="future" >
-      <verb-conj type="regular">volEtis</verb-conj>
+      <verb-conj type="regular">volētis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="indicative" 
@@ -2044,7 +2020,7 @@
       num="singular" 
       person="2nd" 
       tense="perfect" >
-      <verb-conj type="regular">voluerIs</verb-conj>
+      <verb-conj type="regular">voluerīs</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -2058,14 +2034,14 @@
       num="plural" 
       person="1st" 
       tense="perfect" >
-      <verb-conj type="regular">voluerImus</verb-conj>
+      <verb-conj type="regular">voluerīmus</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
       num="plural" 
       person="2nd" 
       tense="perfect" >
-      <verb-conj type="regular">voluerItis</verb-conj>
+      <verb-conj type="regular">voluerītis</verb-conj>
     </verb-conj-set>
     <verb-conj-set
       mood="subjunctive" 
@@ -2208,22 +2184,1047 @@
       <verb-conj type="regular">voluerunt</verb-conj>
     </verb-conj-set>    
   </conjugation>
+  <conjugation footnote="Footnote-9">
+    <!-- eo, ire, ivi(ii), itus -->
+    <hdwd-set>
+      <hdwd source="whitaker">eo, ire, ivi(ii), itus</hdwd>
+    </hdwd-set>
+    <!-- Present --> 
+    <verb-conj-set
+        mood="indicative" 
+        num="singular" 
+        person="1st" 
+        tense="present" >
+      <verb-conj type="regular">eō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">īs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">it</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="present" >
+      <verb-conj type="regular">īmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">ītis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">eunt</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="present" >
+      <verb-conj type="regular">eam</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">eās</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">eat</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="present" >
+      <verb-conj type="regular">eāmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">eātis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">eant</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="imperative"
+      tense="present"
+      num="singular"
+      person="2nd">
+      <verb-conj type="regular">ī</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="imperative"
+      tense="present"
+      num="singular"
+      person="3rd"/>
+    <verb-conj-set
+      mood="imperative"
+      tense="present"
+      num="plural"
+      person="2nd">
+      <verb-conj type="regular">īte</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="imperative"
+      tense="present"
+      num="plural"
+      person="3rd"/>
+    <verb-conj-set
+      mood="infinitive"
+      tense="present">
+      <verb-conj type="regular">īre</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="participle"
+      tense="present">
+      <verb-conj type="regular">iēns</verb-conj>
+      <verb-conj type="irregular">euntis</verb-conj>
+    </verb-conj-set>    
+    <!-- Imperfect -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">ībam</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">ības</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">ībat</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">ībāmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">ībātis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">ībant</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">īrem</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">īrēs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">īret</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">īrēmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">īrētis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">īrent</verb-conj>
+    </verb-conj-set>
+    <!-- Future -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="future" >
+      <verb-conj type="regular">ībō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="future" >
+      <verb-conj type="regular">ībis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="future" >
+      <verb-conj type="regular">ībit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="future" >
+      <verb-conj type="regular">ībimus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="future" >
+      <verb-conj type="regular">ībitis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="future" >
+      <verb-conj type="regular">ībunt</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="imperative"
+      num="singular"
+      person="2nd"
+      tense="future">
+      <verb-conj type="regular">ītō</verb-conj>
+     </verb-conj-set>
+     <verb-conj-set
+        mood="imperative"
+        num="singular"
+        person="3rd"
+        tense="future">
+        <verb-conj type="regular">ītō</verb-conj>
+     </verb-conj-set>
+    <verb-conj-set
+      mood="imperative"
+      num="plural"
+      person="2nd"
+      tense="future">
+      <verb-conj type="regular">ītōte</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="imperative"
+      num="plural"
+      person="3rd"
+      tense="future">
+      <verb-conj type="regular">euntō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="infinitive"
+      tense="future">
+      <verb-conj type="regular">itūrus esse</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="participle"
+      tense="future">
+      <verb-conj type="regular">itūrus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="participle"
+      tense="future"
+      voice="passive">
+      <verb-conj type="regular" footnote="Footnote-4">eundum</verb-conj>
+    </verb-conj-set>
+    <!-- Perfect -->    
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular" footnote="Footnote-10">iī</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-11">īvī</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">īstī</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">iit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular">iimus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">īstis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">iērunt</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular">ierim</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">ierīs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">ierit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular">ierīmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">ierītis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">ierint</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="infinitive"
+      tense="perfect">
+      <verb-conj type="regular" footnote="Footnote-10">īsse</verb-conj>
+      <verb-conj type="irregular">īvisse</verb-conj>
+    </verb-conj-set>
+    <!-- Pluperfect -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">ieram</verb-conj>
+      <verb-conj type="irregular">īveram</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">ierās</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">ierat</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">ierāmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">ierātis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">ierant</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">īssem</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">īssēs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">īsset</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">īssēmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">īssētis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">īssent</verb-conj>
+    </verb-conj-set>
+    <!-- Future Perfect -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="future perfect" >
+      <verb-conj type="regular">ierō</verb-conj>
+      <verb-conj type="regular">īverō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="future perfect" >
+      <verb-conj type="regular">ieris</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="future perfect" >
+      <verb-conj type="regular">ierit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="future perfect" >
+      <verb-conj type="regular">ierimus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="future perfect" >
+      <verb-conj type="regular">ieritis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="future perfect" >
+      <verb-conj type="regular">ierunt</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="gerundive"
+      case="genitive">
+      <verb-conj type="regular" footnote="Footnote-5">eundī</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="gerundive"
+      case="dative">
+      <verb-conj type="regular">eundō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="gerundive"
+      case="accusative">
+      <verb-conj type="regular">eundum</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="gerundive"
+      case="ablative">
+      <verb-conj type="regular">eundō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="supine"
+      case="accusative">
+      <verb-conj type="regular" footnote="Footnote-5">itum</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="supine"
+      case="ablative">
+      <verb-conj type="regular">itū</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="supine"
+      case="dative">
+      <verb-conj type="regular">itū</verb-conj>
+    </verb-conj-set>
+  </conjugation>
+  <conjugation>
+    <hdwd-set>
+      <hdwd source="whitaker">possum, posse, potui, -</hdwd>
+    </hdwd-set>
+    <!-- Present --> 
+    <verb-conj-set
+        mood="indicative" 
+        num="singular" 
+        person="1st" 
+        tense="present" >
+      <verb-conj type="regular">possum</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">potis, -e sum</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">potes</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">potis, -e es</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">potest</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">potis, -e est</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="present" >
+      <verb-conj type="regular">possumus</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">potes, -ia sumus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">potestis</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">potes, -ia estis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">possunt</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">potes, -ia sunt</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="present" >
+      <verb-conj type="regular">possim</verb-conj>
+      <verb-conj footnote="Footnote-12" type="irregular">possiem</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">possīs</verb-conj>
+      <verb-conj type="irregular">possiēs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">possit</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">postisit</verb-conj>
+      <verb-conj type="irregular">possiet</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="present" >
+      <verb-conj type="regular">possīmus</verb-conj>
+      <verb-conj type="irregular">possiemus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="present" >
+      <verb-conj type="regular">possītis</verb-conj>
+      <verb-conj type="irregular">possietis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="present" >
+      <verb-conj type="regular">possint</verb-conj>
+      <verb-conj type="irregular">possient</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="infinitive"
+      tense="present">
+      <verb-conj type="regular">posse</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">potesse</verb-conj>
+    </verb-conj-set>    
+    <verb-conj-set
+      mood="participle"
+      tense="present">
+      <verb-conj type="regular">potēns</verb-conj>
+    </verb-conj-set>
+    <!-- Imperfect -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">poteram</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">poterās</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">poterat</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">poterāmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">poterātis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">poterant</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">possem</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">possēs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">posset</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="imperfect" >
+      <verb-conj type="regular">possēmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="imperfect" >
+      <verb-conj type="regular">possētis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="imperfect" >
+      <verb-conj type="regular">possent</verb-conj>
+    </verb-conj-set>
+    <!-- Future -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="future" >
+      <verb-conj type="regular">poterō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="future" >
+      <verb-conj type="regular">poteris</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="future" >
+      <verb-conj type="regular">poterit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="future" >
+      <verb-conj type="regular">poterimus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="future" >
+      <verb-conj type="regular">poteritis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="future" >
+      <verb-conj type="regular">poterunt</verb-conj>
+      <verb-conj type="irregular" footnote="Footnote-12">poterint</verb-conj>
+    </verb-conj-set>
+    <!-- Perfect -->    
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular">potuī</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuistī</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular">potuimus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuistis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuērunt</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular">potuerim</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuerīs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuerit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="perfect" >
+      <verb-conj type="regular">potuerīmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuerītis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="perfect" >
+      <verb-conj type="regular">potuerint</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="infinitive"
+      tense="perfect">
+      <verb-conj type="regular">potuisse</verb-conj>
+    </verb-conj-set>
+    <!-- Pluperfect -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potueram</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuerās</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuerat</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuerāmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuerātis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuerant</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuissem</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuissēs</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="singular" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuisset</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="1st" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuissēmus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="2nd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuissētis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="subjunctive" 
+      num="plural" 
+      person="3rd" 
+      tense="pluperfect" >
+      <verb-conj type="regular">potuissent</verb-conj>
+    </verb-conj-set>
+    <!-- Future Perfect -->
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="1st" 
+      tense="future perfect" >
+      <verb-conj type="regular">potuerō</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="2nd" 
+      tense="future perfect" >
+      <verb-conj type="regular">potueris</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="singular" 
+      person="3rd" 
+      tense="future perfect" >
+      <verb-conj type="regular">potuerit</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="1st" 
+      tense="future perfect" >
+      <verb-conj type="regular">potuerimus</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="2nd" 
+      tense="future perfect" >
+      <verb-conj type="regular">potueritis</verb-conj>
+    </verb-conj-set>
+    <verb-conj-set
+      mood="indicative" 
+      num="plural" 
+      person="3rd" 
+      tense="future perfect" >
+      <verb-conj type="regular">potuerint</verb-conj>
+    </verb-conj-set>    
+  </conjugation>
   <footnotes>
     <footnote id="Footnote-1">Old forms.</footnote>
     <footnote id="Footnote-2">Alternate forms.</footnote>
-    <footnote id="Footnote-3">The original forms of ferrem and ferre are fer-sEm and fer-se, respectively.</footnote>
-    <footnote id="Footnote-4">Gerundive</footnote>
+    <footnote id="Footnote-3">The original forms of ferrem and ferre are fer-sēm and fer-se, respectively.</footnote>
+    <footnote id="Footnote-4">Gerundive (Future Passive Participle)</footnote>
     <footnote id="Footnote-5">singular</footnote>
     <footnote id="Footnote-6">
-      The verbs nOlO and malO are compounds of volo. They therefore attach nO- or mA- to the beginning of each verb, in place of vo- or vu-. 
+      The verbs nōlō and malō are compounds of volo. They therefore attach nō- or mā- to the beginning of each verb, in place of vo- or vu-. 
       Exceptions to this are found in the present tense:
-      nOlO        nOlumus     mAlO        mAlumus
-      nOn vIs     nOn vultis  mAvIs       mAvultis
-      nOn vult    nOlunt      mAvult      mAlunt
-      In addition, nOlO is the only verb of the three that has present and future tense imperative forms of the verb: 
-      nOlI, nOlIte, and nOlItO, nOlItOte, respectively.
+      nōlō        nōlumus     mālō        mālumus
+      nōn vīs     nōn vultis  māvīs       māvultis
+      nōn vult    nōlunt      māvult      mālunt
+      In addition, nōlō is the only verb of the three that has present and future tense imperative forms of the verb: 
+      nōlī, nōlīte, and nōlītō, nōlītōte, respectively.
     </footnote>
     <footnote id="Footnote-7">An earlier form.</footnote>
+    <footnote id="Footnote-8">
+      The perfect passive participle ending will change according to its subject's gender, number and case. 
+      Endings shown here are the masculine, feminine and neuter nominative singular.</footnote>
+    <footnote id="Footnote-9">A passive form of the verb that is used impersonally is itum est.</footnote>
+    <footnote id="Footnote-10">
+      While the perfect form of this verb is regular, ii usually contracts to i when it is followed by an s. 
+      Thus, īstī, īstis and īsse</footnote>
+    <footnote id="Footnote-11">It is rare that the “v” appear as a form.</footnote>
+    <footnote id="Footnote-12">Used by early writers.</footnote>
   </footnotes>
 </conjdata>
 
