@@ -51,36 +51,7 @@
                 </div>
             </div>
         </div>
-        </xsl:variable-->
-    
-    <!--xsl:variable name="test_endings">
-        <div class="alph-entry">
-            <div class="alph-dict">
-                <span class="alph-hdwd">fero, ferre, tuli, latus: </span>
-                <span context="verb" class="alph-pofs">verb</span>
-                <span class="alph-attrlist">(very frequent)</span>
-            </div>
-            <div class="alph-mean">bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;</div>
-            <div class="alph-infl-set">
-                <span class="alph-term">fer•<span class="alph-suff">am</span></span>
-                <div class="alph-infl">
-                    <span context="1st" class="alph-pers">1st person</span>
-                    <span context="singular" class="alph-num">singular;</span>
-                    <span class="alph-tense">present</span>
-                    <span context="subjunctive" class="alph-mood">subjunctive;</span>
-                    <span class="alph-voice">active</span>
-                </div>
-                <div class="alph-infl">
-                    <span context="1st" class="alph-pers">1st person</span>
-                    <span context="singular" class="alph-num">singular;</span>
-                    <span class="alph-tense">future</span>
-                    <span context="indicative" class="alph-mood">indicative;</span>
-                    <span class="alph-voice">active</span>
-                </div>
-            </div>
-        </div>
-    </xsl:variable-->
-    
+        </xsl:variable-->   
     <!--xsl:param name='selected_endings' select="exsl:node-set($test_endings)"/-->
         
     <xsl:template match="/">
@@ -108,7 +79,10 @@
     <xsl:template name="verbtable">
         <xsl:param name="endings" />
         <xsl:variable name="include_voice">
-            <xsl:value-of select="count($endings[@voice]) &gt; 0"/>
+            <!-- the gerundive participle is identified as future passive participle and
+                 if it's the only instance of voice in the conjugation we don't want to pull it
+                 out into a separate column -->
+            <xsl:value-of select="count($endings[@voice]) &gt; 1"/>
         </xsl:variable>
         <xsl:variable name="data_cols">
             <xsl:choose>
@@ -119,6 +93,9 @@
         <table id="alph-infl-table"> <!-- start verb table -->
             <caption class="hdwd">
                 <xsl:value-of select="$hdwd"/>
+                <xsl:call-template name="add-footnote">
+                    <xsl:with-param name="item" select="//conjugation/hdwd-set/hdwd[text() = string($hdwd)]"/>
+                </xsl:call-template>
             </caption>
 
             <!-- add the column groups -->            
@@ -469,6 +446,21 @@
         <xsl:param name="headerrow1"/>
         <xsl:param name="include_voice"/>
         <xsl:param name="colspan"/>
+        <!-- add the voice header row -->
+        <xsl:if test="$include_voice = 'true'">
+            <tr id="headerrow1-irreg">
+                <th colspan="2" class="always-visible">
+                    <span class="header-text">voice</span>    
+                </th>     
+                <xsl:for-each select="//order-item[@attname='voice']">
+                    <xsl:sort select="/conjdata/order-table/order-item[@attname='voice' 
+                        and text()=current()]/@voice" data-type="number"/>   
+                    <th colspan="2">
+                        <span class="header-text"><xsl:value-of select="."/></span>                      
+                    </th>
+                </xsl:for-each>            
+            </tr>    
+        </xsl:if>        
         <tr id="headerrow1">
             <th colspan="2" class="always-visible">
                 <span class="header-text"><xsl:value-of select="'mood'"/></span>    
