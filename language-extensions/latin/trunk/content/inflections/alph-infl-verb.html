@@ -10,14 +10,23 @@
 <div id="page-header">
     <div class="title">Verb Conjugations</div>
     <div class="loading">Loading...</div>
-    <div id="links"><a href="table" id="expand-table-link">Full Table</a></div>
-    <div id="reorder">Reorder by: 
-        <a class="reorder-link" href="table" id="voice-conj-mood">Voice-Conjugation-Mood</a>
-        <a class="reorder-link" href="table" id="voice-mood-conj">Voice-Mood-Conjugation</a>
-        <a class="reorder-link" href="table" id="mood-voice-conj">Mood-Voice-Conjugation</a>
-        <a class="reorder-link" href="table" id="mood-conj-voice">Mood-Conjugation Voice</a>
-        <a class="reorder-link" href="table" id="conj-voice-mood">Conjugation-Voice-Mood</a>
-        <a class="reorder-link" href="table" id="conj-mood-voice">Conjugation-Mood-Voice</a>
+    <div id="links">
+        <a href="table" id="expand-table-link">Full Table</a>
+        <div id="infl-links">
+            <span id="infl-links-label"></span>
+            <select id="infl-links-select"></select>
+        </div>        
+    </div>
+    <div id="reorder">
+        <span id="reorder-label">Sort by:</span> 
+        <select id="sortorder" class="sort">
+            <option value="voice-conj-mood">Voice > Conjugation > Mood</option>
+            <option value="voice-mood-conj">Voice > Mood > Conjugation</option>
+            <option value="conj-voice-mood">Conjugation > Voice > Mood</option>
+            <option value="conj-mood-voice">Conjugation > Mood > Voice</option>
+            <option value="mood-voice-conj">Mood > Voice > Conjugation</option>
+            <option value="mood-conj-voice">Mood > Conjugation > Voice</option>
+        </select>
     </div>
 </div>
 </body>
