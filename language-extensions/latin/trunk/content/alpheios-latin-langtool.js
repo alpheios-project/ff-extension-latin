@@ -96,14 +96,17 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
     var params = a_params || {};
     
     // initialize the suffix arrays
+    // TODO should flip this to be a single object keys on infl_type
     params.suffixes = {};
     params.entries = {};
+    params.words = {};
     
     for (var infl_type in Alph.LanguageToolSet.latin.INFLECTION_MAP )
     {
         var key = Alph.LanguageToolSet.latin.INFLECTION_MAP[infl_type].keys[0];
         params.suffixes[key] = [];
         params.entries[key] = [];
+        params.words[key] = [];
     }
         
     // The word will have one more more alph-infl-set elements
@@ -115,6 +118,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
         function(i)
         {
             var dict = $(this).siblings(".alph-dict");
+            var word = $(this).attr("context");
             
             // check for the pofs first as a child of this element, and if not present,
             // then from the sibling dictionary entry 
@@ -204,6 +208,8 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                         
                     params.entries[infl_type].push(
                         $(this).parent(".alph-entry").get(0));
+                        
+                    params.words[infl_type][word]=1;
 
                     // duplicate suffixes if necessary
                     var num_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys.length; 
