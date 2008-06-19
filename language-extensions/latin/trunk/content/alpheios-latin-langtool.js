@@ -114,24 +114,24 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
     // and one or more alph-infl elements.  Iterate through the alph-infl-sets
     // retrieving the alph-suffix elements which are applicable to
     // each supported part of speech
-    $(".alph-infl-set",a_node).each(
+    Alph.$(".alph-infl-set",a_node).each(
         function(i)
         {
-            var dict = $(this).siblings(".alph-dict");
-            var word = $(this).attr("context");
+            var dict = Alph.$(this).siblings(".alph-dict");
+            var word = Alph.$(this).attr("context");
             
             // check for the pofs first as a child of this element, and if not present,
             // then from the sibling dictionary entry 
             var my_pofs;
-            var infl_pofs = $(".alph-pofs",this);
+            var infl_pofs = Alph.$(".alph-pofs",this);
             if (infl_pofs.length == 0)
             {
-                infl_pofs = $(".alph-pofs",dict)
+                infl_pofs = Alph.$(".alph-pofs",dict)
             }
 
             // check for irregular verbs
 
-            var dict_hdwd = $(".alph-hdwd",dict).text();
+            var dict_hdwd = Alph.$(".alph-hdwd",dict).text();
             // remove the trailing :
             dict_hdwd = dict_hdwd.replace(/\:\s*$/,'');
             Alph.util.log("hdwd for inflection set: " + dict_hdwd);
@@ -152,22 +152,22 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     
             // gather the moods for the verbs
             // TODO - look at handling multiple cases separately for the nouns and adjectives?
-            $(".alph-infl",this).each( 
+            Alph.$(".alph-infl",this).each( 
                 function()
                 {
                     // some verb moods (infinitive, imperative and gerundive) link to 
                     // a supplemental table rather than primary verb pofs table
 
-                    var mood = $(".alph-mood",this).attr('context');
+                    var mood = Alph.$(".alph-mood",this).attr('context');
                     if (Alph.LanguageToolSet.latin.INFLECTION_MAP[mood])
                     {
-                        infls[Alph.LanguageToolSet.latin.INFLECTION_MAP[mood].keys[0]] = $(this).get(0);
+                        infls[Alph.LanguageToolSet.latin.INFLECTION_MAP[mood].keys[0]] = Alph.$(this).get(0);
                     }
                 }
             );
             if (irregular)
             {
-                infls[Alph.LanguageToolSet.latin.INFLECTION_MAP['verb_irregular'].keys[0]] = $(this).get(0);
+                infls[Alph.LanguageToolSet.latin.INFLECTION_MAP['verb_irregular'].keys[0]] = Alph.$(this).get(0);
             }
             for (var pofs in Alph.LanguageToolSet.latin.INFLECTION_MAP)
             {
@@ -178,7 +178,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                 // isn't one we support then just move on to the next part of speech
                 if ( infl_pofs.length == 0 || 
                      (pofs == 'verb_irregular' && ! irregular) ||  // context pofs for irregular verbs is just 'verb'
-                     (pofs != 'verb_irregular' && $(infl_pofs[0]).attr("context") != pofs)
+                     (pofs != 'verb_irregular' && Alph.$(infl_pofs[0]).attr("context") != pofs)
                    )
                 {
                     continue;
@@ -190,7 +190,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                 // this will also add in a general verb inflection for those verbs which use a supplemental table 
                 if (! infls[map_pofs] ) 
                 {
-                    infls[map_pofs] = $(".alph-infl",this).get(0)
+                    infls[map_pofs] = Alph.$(".alph-infl",this).get(0)
                 }
 
                 for (var infl_type in infls)
@@ -204,10 +204,10 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                         params.showpofs = infl_type;
                     }
                     params.suffixes[infl_type].push(
-                        $(".alph-suff",this).get());
+                        Alph.$(".alph-suff",this).get());
                         
                     params.entries[infl_type].push(
-                        $(this).parent(".alph-entry").get(0));
+                        Alph.$(this).parent(".alph-entry").get(0));
                         
                     params.words[infl_type][word]=1;
 
@@ -217,7 +217,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     {
                         var extra_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys[i];
                         params.suffixes[extra_pofs].push(
-                        $(".alph-suff",this).get());
+                        Alph.$(".alph-suff",this).get());
                     }
                     
                     // identify the correct file and links for the inflection type
@@ -228,7 +228,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     if (params.showpofs == infl_type)
                     {
                         params.links = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].links;
-                        //Alph.LanguageToolSet.latin.setInflectionXSL(params,infl_type,pofs,a_node,$(this).get(0));
+                        //Alph.LanguageToolSet.latin.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
                     }
                     
                 } // end infl-type                
