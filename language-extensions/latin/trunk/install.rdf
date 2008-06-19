@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Revision$-->
-<!-- $BuildId: 123+$-->
+<!-- $BuildId: 124$-->
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<Description about="urn:mozilla:install-manifest">
 		<em:name>Alpheios Latin Tools</em:name>
-		<em:version>0.2.786.20080618</em:version>
+		<em:version>0.2.787.20080619</em:version>
 		<em:description></em:description>
 		<em:creator>Cantus Foundation</em:creator>
 		<em:id>{7dd2b42f-3db8-4833-88c4-5a9e3788017b}</em:id>
