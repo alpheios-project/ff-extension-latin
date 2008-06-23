@@ -16,4 +16,5 @@ pref("extensions.alpheios.latin.grammar.hotlinks",
 pref("extensions.alpheios.latin.popuptrigger",'dblclick');
 pref("extensions.alpheios.latin.cmds.alpheios-inflect-cmd","handleInflections");
 pref("extensions.alpheios.latin.cmds.alpheios-morph-inflect-cmd","handleInflectionsForMorphWindow");
+pref("extensions.alpheios.latin.cmds.alpheios-grammar-cmd","openGrammar");
             
