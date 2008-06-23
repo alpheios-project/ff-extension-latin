@@ -92,7 +92,6 @@ Alph.LanguageToolSet.latin.IRREG_VERBS =
  */
 Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_params)
 {    
-       Alph.util.log("Getting inflections table information for " + a_params.word);
     var params = a_params || {};
     
     // initialize the suffix arrays

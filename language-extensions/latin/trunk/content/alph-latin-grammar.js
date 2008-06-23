@@ -278,7 +278,7 @@ Alph.grammar = {
         // otherwise set it to the preface
         // and reset the contents of the grammar content browser
         var start_href = 
-                params != null      ? 
+                params != null && params.target_href ? 
                 params.target_href  : 
                 'preface';
         
