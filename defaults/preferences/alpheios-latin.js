@@ -14,7 +14,7 @@ pref("extensions.alpheios.latin.url.grammar",
 pref("extensions.alpheios.latin.grammar.hotlinks",
      "alph-decl,alph-conj,alph-pofs,alph-mood,alph-case");
 pref("extensions.alpheios.latin.popuptrigger",'dblclick');
-pref("extensions.alpheios.latin.cmds.alpheios-inflect-cmd","handleInflections");
-pref("extensions.alpheios.latin.cmds.alpheios-morph-inflect-cmd","handleInflectionsForMorphWindow");
-pref("extensions.alpheios.latin.cmds.alpheios-grammar-cmd","openGrammar");
+pref("extensions.alpheios.latin.features.alpheios-inflect",true);
+pref("extensions.alpheios.latin.features.alpheios-grammar",true);
+
             
