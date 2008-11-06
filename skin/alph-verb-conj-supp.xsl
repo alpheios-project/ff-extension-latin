@@ -99,11 +99,11 @@
         <xsl:param name="endings" />
         <table id="alph-infl-table"> <!-- start verb table -->
             <caption>
-                <xsl:for-each select="$selected_endings">
+                <xsl:for-each select="$selected_endings//span[@class='alph-term']">
                     <xsl:if test="position() &gt; 1">
                         , 
                     </xsl:if>
-                    <xsl:value-of select="."/>
+                    <div class="alph-infl-term"><xsl:copy-of select="current()"/></div>    
                 </xsl:for-each>
             </caption>
             <!-- write the colgroup elements -->
