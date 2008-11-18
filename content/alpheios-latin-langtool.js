@@ -262,7 +262,8 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
     a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
     
     // get rid of the selected endings parameter if we couldn't find any
-    if (a_params.xslt_params.selected_endings.length == 0)
+    if (typeof a_params.xslt_params.selected_endings == "undefined" 
+        || a_params.xslt_params.selected_endings.length == 0)
     {
         delete a_params.xslt_params.selected_endings;
     }
