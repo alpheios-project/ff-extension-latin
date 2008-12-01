@@ -92,6 +92,8 @@
                         <checkbox id="panel-override-latin" 
                                   preference="pref-panel-override-latin"/>
                         <label control="panel-override-latin" value="&alpheios.prefs.panels.use.defaults;"/>
+                        <button oncommand="Alph.prefs.restore_panel_defaults('latin');"
+                                label="&alpheios.latin.prefs.panels.restore.defaults;"/>
                     </hbox>
                     <groupbox id="panel-prefs-box-latin"/>
                 </vbox>
