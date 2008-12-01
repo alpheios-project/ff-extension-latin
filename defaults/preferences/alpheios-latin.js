@@ -16,5 +16,5 @@ pref("extensions.alpheios.latin.grammar.hotlinks",
 pref("extensions.alpheios.latin.popuptrigger",'dblclick');
 pref("extensions.alpheios.latin.features.alpheios-inflect",true);
 pref("extensions.alpheios.latin.features.alpheios-grammar",true);
-
+pref("extensions.alpheios.latin.panels.use.defaults",true);
             

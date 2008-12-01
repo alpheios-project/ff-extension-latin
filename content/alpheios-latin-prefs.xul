@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://alpheios/skin/prefs/alpheios-prefs.css/" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://alpheios-latin/locale/alpheios-latin-prefs.dtd">
+<!DOCTYPE overlay [ 
+  <!ENTITY % alpheiosDTD SYSTEM "chrome://alpheios/locale/alpheios-prefs.dtd">
+  <!ENTITY % latinDTD SYSTEM "chrome://alpheios-latin/locale/alpheios-latin-prefs.dtd">
+  %alpheiosDTD;
+  %latinDTD;
+]>
 <overlay id="alpheios-latin-prefs-overlay" 
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <prefwindow id="alpheios-prefs">
@@ -65,4 +70,32 @@
                 </hbox>
            </prefpane>
     </prefwindow>
+    
+     <!-- add the Latin preference for overriding the panel defaults -->
+    <prefpane id="alpheios-prefs-windows">
+        <preferences>
+            <preference id="pref-panel-override-latin"
+                        name="extensions.alpheios.latin.panels.use.defaults"
+                        type="bool"/>                
+        </preferences>
+    </prefpane>
+    
+    <!-- add the Latin tab to panel preferences tabpanel -->
+    <tabbox id="alpheios-panel-prefs" >
+        <tabs id="panel-prefs-tabs">
+            <tab label="&alpheios.latin.prefs.panels.tablabel;"/>
+        </tabs>
+        <tabpanels id="panel-prefs-tabpanels">
+            <tabpanel id="panel-prefs-tabpanel-latin" align="vertical">
+                <vbox>
+                    <hbox align="center">
+                        <checkbox id="panel-override-latin" 
+                                  preference="pref-panel-override-latin"/>
+                        <label control="panel-override-latin" value="&alpheios.prefs.panels.use.defaults;"/>
+                    </hbox>
+                    <groupbox id="panel-prefs-box-latin"/>
+                </vbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
 </overlay>
