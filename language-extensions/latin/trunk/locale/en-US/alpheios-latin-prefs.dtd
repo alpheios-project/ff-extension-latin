@@ -8,3 +8,4 @@
 <!ENTITY alpheios.latin.prefs.popuptrigger.mousemove "mousemove">
 <!ENTITY alpheios.latin.prefs.popuptrigger.dblclick "dblclick">
 <!ENTITY alpheios.latin.prefs.panels.tablabel "Latin">
+<!ENTITY alpheios.latin.prefs.panels.restore.defaults "Restore Latin Defaults">
