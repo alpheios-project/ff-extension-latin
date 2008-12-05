@@ -249,12 +249,6 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
  */
 Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
 {
-    if (a_infl_type.indexOf('verb') == -1)
-    {
-        // for now, we only specify xml/xslt for verbs
-        return;
-        
-    }
     // TODO still need to link to big verb table
         
     a_params.xslt_params = {};
@@ -283,7 +277,7 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
         a_params.xslt_params.mood = mood;    
                                  
     }
-    else
+    else if ( a_infl_type == 'verb' )
     {
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-verb-conj-group.xsl';        
@@ -302,4 +296,26 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
             a_params.xslt_params.group6 = order[2];
         }
     }
+    else
+    {
+        a_params.xml_url =
+            'chrome://alpheios-latin/content/inflections/alph-infl-' + a_infl_type + '.xml';
+        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+        a_params.xslt_params.strip_greek_vowel_length = false;
+        a_params.xslt_params.match_pofs = a_infl_type;
+
+        if (a_params.order )
+        {
+
+            var order = a_params.order.split('-');
+            if (order.length > 0)
+            {
+                a_params.xslt_params.group4 = order[0];
+                a_params.xslt_params.group5 = order[1];
+                a_params.xslt_params.group6 = order[2];
+            }
+        }
+
+    }
+
 }
