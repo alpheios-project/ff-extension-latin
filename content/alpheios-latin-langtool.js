@@ -302,6 +302,11 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
             'chrome://alpheios-latin/content/inflections/alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
         a_params.xslt_params.strip_greek_vowel_length = false;
+
+        // wordsxml outputs suffixes in ascii so we need to transliterate
+        // the unicode in the ending tables for matching
+        a_params.xslt_params.translit_ending_table_match = true;
+        
         a_params.xslt_params.match_pofs = a_infl_type;
 
         if (a_params.order )
