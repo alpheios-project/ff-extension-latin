@@ -341,7 +341,7 @@
                             <xsl:value-of select="count(
                                 $selected_endings
                                 [
-                                (div[@class='alph-dict']/span[@class='alph-conj']/@context = current()/../@conj)
+                                (div[@class='alph-dict']//span[@class='alph-conj']/@context = current()/../@conj)
                                 and
                                 (div[@class='alph-infl-set']/
                                 div[
@@ -357,7 +357,7 @@
                             <xsl:value-of select="count(
                                 $selected_endings
                                 [
-                                (div[@class='alph-dict']/span[@class='alph-conj']/@context = current()/../@conj)
+                                (div[@class='alph-dict']//span[@class='alph-conj']/@context = current()/../@conj)
                                 and
                                 (div[@class='alph-infl-set']/
                                 div[
@@ -371,7 +371,7 @@
                             <xsl:value-of select="count(
                                 $selected_endings
                                 [
-                                (div[@class='alph-dict']/span[@class='alph-conj']/@context = current()/../@conj)
+                                (div[@class='alph-dict']//span[@class='alph-conj']/@context = current()/../@conj)
                                 and
                                 (div[@class='alph-infl-set']/
                                 div[
@@ -517,7 +517,7 @@
         <xsl:param name="current_data"/>
         <xsl:variable name="matches">
             <xsl:for-each select="$selected_endings//div[@class='alph-infl-set' and 
-                ../div[@class='alph-dict']/span[(@class='alph-conj') and (@context = $current_data/@conj)]]
+                ../div[@class='alph-dict']//span[(@class='alph-conj') and (@context = $current_data/@conj)]]
                 ">
                 <xsl:for-each select="div[@class='alph-infl']">
                     <xsl:call-template name="find_infl_match">
