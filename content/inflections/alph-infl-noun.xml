@@ -76,11 +76,15 @@
          <infl-ending type="regular">ī</infl-ending>
          <infl-ending type="irregular" footnote="foot-7">ō</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="singular" case="genitive" decl="2nd" gend="neuter"/>
+      <infl-ending-set num="singular" case="genitive" decl="2nd" gend="neuter">
+            <infl-ending type="regular">i</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="singular" case="genitive" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">is</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="singular" case="genitive" decl="3rd" gend="neuter"/>
+      <infl-ending-set num="singular" case="genitive" decl="3rd" gend="neuter">
+         <infl-ending type="regular">is</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="singular" case="genitive" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">ūs</infl-ending>
          <infl-ending type="irregular" footnote="foot-1">uis</infl-ending>
@@ -91,8 +95,8 @@
          <infl-ending type="regular">ūs</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="genitive" decl="5th" gend="feminine">
-         <infl-ending type="regular">ei</infl-ending>
-         <infl-ending type="regular">ēi</infl-ending>
+         <infl-ending type="regular">ēī</infl-ending>
+         <infl-ending type="regular">eī</infl-ending>
          <infl-ending type="irregular">ī</infl-ending>
          <infl-ending type="irregular">ē</infl-ending>
          <infl-ending type="irregular" footnote="foot-6">ēs</infl-ending>
@@ -107,8 +111,11 @@
       <infl-ending-set num="singular" case="dative" decl="2nd" gend="neuter"/>
       <infl-ending-set num="singular" case="dative" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">ī</infl-ending>
+         <infl-ending type="irregular" footnote="foot-17">e</infl-ending> 
       </infl-ending-set>
-      <infl-ending-set num="singular" case="dative" decl="3rd" gend="neuter"/>
+      <infl-ending-set num="singular" case="dative" decl="3rd" gend="neuter">
+         <infl-ending type="regular">i</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="singular" case="dative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">ūī</infl-ending>
          <infl-ending type="regular">ū</infl-ending>
@@ -162,12 +169,17 @@
          <infl-ending type="regular">ō</infl-ending>
          <infl-ending type="irregular" footnote="foot-1">ōd</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="singular" case="ablative" decl="2nd" gend="neuter"/>
+      <infl-ending-set num="singular" case="ablative" decl="2nd" gend="neuter">
+         <infl-ending type="regular" footnote="foot-1">o</infl-ending>
+       </infl-ending-set>
       <infl-ending-set num="singular" case="ablative" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">e</infl-ending>
          <infl-ending type="irregular" footnote="foot-11">ī</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="singular" case="ablative" decl="3rd" gend="neuter"/>
+      <infl-ending-set num="singular" case="ablative" decl="3rd" gend="neuter">
+         <infl-ending type="regular">e</infl-ending>
+         <infl-ending type="irregular" footnote="foot-11">i</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="singular" case="ablative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">ū</infl-ending>
          <infl-ending type="irregular" footnote="foot-1">ūd</infl-ending>
@@ -182,16 +194,24 @@
          <infl-ending type="regular">ae</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="locative" decl="2nd" gend="masculine feminine">
-         <infl-ending type="regular">ī</infl-ending>
+         <infl-ending type="regular">o</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="singular" case="locative" decl="2nd" gend="neuter"/>
+      <infl-ending-set num="singular" case="locative" decl="2nd" gend="neuter">
+         <infl-ending type="regular">o</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="singular" case="locative" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular"> e</infl-ending>
          <infl-ending type="regular">ī</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="singular" case="locative" decl="3rd" gend="neuter"/>
-      <infl-ending-set num="singular" case="locative" decl="4th" gend="masculine feminine"/>
-      <infl-ending-set num="singular" case="locative" decl="4th" gend="neuter"/>
+      <infl-ending-set num="singular" case="locative" decl="3rd" gend="neuter">
+         <infl-ending type="regular">i</infl-ending>
+      </infl-ending-set>
+      <infl-ending-set num="singular" case="locative" decl="4th" gend="masculine feminine">
+         <infl-ending type="regular">u</infl-ending>
+      </infl-ending-set>
+      <infl-ending-set num="singular" case="locative" decl="4th" gend="neuter">
+        <infl-ending type="regular">u</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="singular" case="locative" decl="5th" gend="feminine">
          <infl-ending type="regular">ē</infl-ending>
       </infl-ending-set>
@@ -214,7 +234,9 @@
       <infl-ending-set num="singular" case="vocative" decl="3rd" gend="masculine feminine">
          <infl-ending type="irregular" footnote="foot-7">_</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="singular" case="vocative" decl="3rd" gend="neuter"/>
+      <infl-ending-set num="singular" case="vocative" decl="3rd" gend="neuter">
+         <infl-ending type="regular">_</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">us</infl-ending>
       </infl-ending-set>
@@ -260,13 +282,18 @@
          <infl-ending type="irregular">um</infl-ending>
          <infl-ending type="irregular" footnote="foot-8">om</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="genitive" decl="2nd" gend="neuter"/>
+      <infl-ending-set num="plural" case="genitive" decl="2nd" gend="neuter">
+         <infl-ending type="regular">orum</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="genitive" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">um</infl-ending>
          <infl-ending type="irregular" footnote="foot-11">ium</infl-ending>
          <infl-ending type="irregular" footnote="foot-7">ōn</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="genitive" decl="3rd" gend="neuter"/>
+      <infl-ending-set num="plural" case="genitive" decl="3rd" gend="neuter">
+         <infl-ending type="regular">um</infl-ending>
+         <infl-ending type="irregular" footnote="foot-11">ium</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="genitive" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">uum</infl-ending>
          <infl-ending type="irregular" footnote="foot-16">um</infl-ending>
@@ -286,11 +313,15 @@
       <infl-ending-set num="plural" case="dative" decl="2nd" gend="masculine feminine">
          <infl-ending type="regular">īs</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="dative" decl="2nd" gend="neuter"/>
+      <infl-ending-set num="plural" case="dative" decl="2nd" gend="neuter">
+         <infl-ending type="regular">is</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="dative" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">ibus</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="dative" decl="3rd" gend="neuter"/>
+      <infl-ending-set num="plural" case="dative" decl="3rd" gend="neuter">
+         <infl-ending type="regular">ibus</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="dative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">ibus</infl-ending>
          <infl-ending type="irregular" footnote="foot-14">ubus</infl-ending>
@@ -336,11 +367,15 @@
       <infl-ending-set num="plural" case="ablative" decl="2nd" gend="masculine feminine">
          <infl-ending type="regular">īs</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="ablative" decl="2nd" gend="neuter"/>
+      <infl-ending-set num="plural" case="ablative" decl="2nd" gend="neuter">
+         <infl-ending type="regular">is</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="ablative" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">ibus</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="ablative" decl="3rd" gend="neuter"/>
+      <infl-ending-set num="plural" case="ablative" decl="3rd" gend="neuter">
+         <infl-ending type="regular">ibus</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="ablative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">ibus</infl-ending>
          <infl-ending type="irregular" footnote="foot-14">ubus</infl-ending>
@@ -357,7 +392,9 @@
       <infl-ending-set num="plural" case="locative" decl="2nd" gend="masculine feminine">
          <infl-ending type="regular">īs</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="locative" decl="2nd" gend="neuter"/>
+      <infl-ending-set num="plural" case="locative" decl="2nd" gend="neuter">
+         <infl-ending type="regular">is</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="locative" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">ibus</infl-ending>
       </infl-ending-set>
@@ -365,11 +402,13 @@
          <infl-ending type="regular">ibus</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="plural" case="locative" decl="4th" gend="masculine feminine">
-         <infl-ending type="regular">ī</infl-ending>
+         <infl-ending type="regular">ibus</infl-ending>
       </infl-ending-set>
-      <infl-ending-set num="plural" case="locative" decl="4th" gend="neuter"/>
+      <infl-ending-set num="plural" case="locative" decl="4th" gend="neuter">
+         <infl-ending type="regular">ibus</infl-ending>
+      </infl-ending-set>
       <infl-ending-set num="plural" case="locative" decl="5th" gend="feminine">
-         <infl-ending type="regular">ē</infl-ending>
+         <infl-ending type="regular">ebus</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="plural" case="vocative" decl="1st" gend="feminine">
          <infl-ending type="regular">ae</infl-ending>
@@ -385,6 +424,7 @@
       </infl-ending-set>
       <infl-ending-set num="plural" case="vocative" decl="3rd" gend="neuter">
          <infl-ending type="regular">a</infl-ending>
+         <infl-ending type="irregular" footnote="foot-11">ia</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="plural" case="vocative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">ūs</infl-ending>
@@ -414,5 +454,6 @@
       <footnote id="foot-14">Always in partus and tribus, usually in artus and lacus, sometimes in other words, eg portus and specus</footnote>
       <footnote id="foot-15">Often in names of plants and trees and in nouns ending in -tus</footnote>
       <footnote id="foot-16">When pronounced as one syllable</footnote>
+      <footnote id="foot-17">Early</footnote>
    </footnotes>
 </infl-data>
