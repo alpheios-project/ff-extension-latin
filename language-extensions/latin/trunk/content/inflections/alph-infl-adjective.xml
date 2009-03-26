@@ -161,7 +161,7 @@
          <infl-ending type="regular">is</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="3rd" gend="masculine">
-         <infl-ending type="regular">-</infl-ending>
+         <infl-ending type="regular">_</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="3rd" gend="neuter">
          <infl-ending type="regular">e</infl-ending>
