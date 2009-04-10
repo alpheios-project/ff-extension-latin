@@ -17,4 +17,17 @@ pref("extensions.alpheios.latin.popuptrigger",'dblclick');
 pref("extensions.alpheios.latin.features.alpheios-inflect",true);
 pref("extensions.alpheios.latin.features.alpheios-grammar",true);
 pref("extensions.alpheios.latin.panels.use.defaults",true);
-            
+pref("extensions.alpheios.latin.dictionaries.full","ls");
+pref("extensions.alpheios.latin.dictionaries.full.default","ls");
+pref("extensions.alpheios.latin.dictionary.full.ls.search.lemma_url",
+     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-lemma2html.xq?");
+pref("extensions.alpheios.latin.dictionary.full.ls.search.lemma_param",
+     "l");
+pref("extensions.alpheios.latin.dictionary.full.ls.search.multiple_lemmas"
+    ,true);
+pref("extensions.alpheios.latin.dictionary.full.ls.search.id_url",
+     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-id2html.xq?");
+pref("extensions.alpheios.latin.dictionary.full.ls.search.lemma_id_param",
+     "n");
+pref("extensions.alpheios.latin.dictionary.full.ls.search.multiple_lemma_ids"
+    ,true);
