@@ -3,6 +3,6 @@ content alpheios-latin chrome/content/ contentaccessible=yes
 locale	alpheios-latin	en-US		chrome/locale/en-US/
 skin	alpheios-latin	classic/1.0	chrome/skin/
 
-overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin-overlay.xul
+overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin.xul
 overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
 style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-latin/skin/alpheios-latin.css

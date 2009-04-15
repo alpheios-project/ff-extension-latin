@@ -9,6 +9,11 @@
 <overlay id="alpheios-latin-prefs-overlay" 
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <prefwindow id="alpheios-prefs">
+        <stringbundleset id="alpheios-prefs-stringbundleset">
+            <stringbundle 
+                  id="alpheios-prefs-strings-latin" 
+                   src="chrome://alpheios-latin/locale/alpheios-latin-prefs.properties"/>
+        </stringbundleset>
         <prefpane id="alpheios-prefs-latin" 
                   label="&alpheios.latin.prefs.title;" 
                   image="">
@@ -97,6 +102,17 @@
                     </hbox>
                     <groupbox id="panel-prefs-box-latin"/>
                 </vbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+    <tabbox id="dict-prefs">
+        <tabs id="dicts-prefs-language-tabs">
+            <tab id="dicts-prefs-language-tabs-latin"
+                 label="&alpheios.latin.prefs.panels.tablabel;"/>
+        </tabs>
+        <tabpanels id="dicts-prefs-language-details">
+            <tabpanel>
+                <vbox id="dicts-prefs-language-details-latin"/> 
             </tabpanel>
         </tabpanels>
     </tabbox>

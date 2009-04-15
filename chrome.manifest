@@ -3,7 +3,7 @@ content alpheios-latin jar:chrome/alpheios-latin.jar!/content/ contentaccessible
 locale	alpheios-latin	en-US		jar:chrome/alpheios-latin.jar!/locale/en-US/
 skin	alpheios-latin	classic/1.0	jar:chrome/alpheios-latin.jar!/skin/
 
-overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin-overlay.xul
+overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin.xul
 overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
 style   chrome://global/content/customizeToolbar.xul    chrome://alpheios-latin/skin/alpheios-latin.css
 

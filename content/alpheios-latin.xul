@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-latin/locale/alpheios-latin.dtd">
+
+<overlay id="alpheios-latin-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-latin/content/alpheios-latin-langtool.js" />
+    
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="alpheios-strings-latin" 
+                      src="chrome://alpheios-latin/locale/alpheios-latin-prefs.properties"/>
+    </stringbundleset>
+
+    <broadcasterset id="mainBroadcasterSet">
+        <!-- broadcaster which hides latin-specific menu elements -->
+        <broadcaster id="alph-lang-latin-hide"
+                     hidden="true"
+                     disabled="true"
+                     class="alpheios-language-disabled-notifier"/>
+    </broadcasterset>
+
+    <menupopup id="alpheios-lang-popup-cm">
+        <menuitem id="alpheios-cm-lang-latin"
+                  label="&alpheios.lang.latin;"
+                  value="latin"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup id="alpheios-lang-popup-tm">
+        <menuitem id="alpheios-tm-lang-latin"
+                  label="&alpheios.lang.latin;"
+                  value="latin"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup
+        id = "alph-dict-menu-popup">      
+        <menuitem id="alpheios-dict-ls" 
+            label="&alpheios.panel.dict.ls;"
+            name="alpheios-dict-current"
+            command="alpheios-dict-switch-cmd"
+            type="radio"
+            class="menuitem-iconic"
+            observes="alph-lang-latin-hide"/>
+    </menupopup>
+</overlay>
