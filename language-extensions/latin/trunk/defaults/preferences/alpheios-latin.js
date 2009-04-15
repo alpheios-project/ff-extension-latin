@@ -6,6 +6,7 @@ pref("extensions.alpheios.latin.shift_handler","handleInflections");
 pref("extensions.alpheios.latin.context_handler","grammarContext");
 pref("extensions.alpheios.latin.methods.convert",'latin_to_ascii');
 pref("extensions.alpheios.latin.methods.lexicon",'webservice');
+pref("extensions.alpheios.latin.methods.startup",'loadLexIds');
 pref("extensions.alpheios.latin.url.lexicon", 'http://localhost:8200');
 pref("extensions.alpheios.latin.url.lexicon.request", "/latin?word=<WORD>");
 pref("extensions.alpheios.latin.url.lexicon.timeout",5000);
