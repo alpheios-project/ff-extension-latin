@@ -16,7 +16,7 @@
         </stringbundleset>
         <prefpane id="alpheios-prefs-latin" 
                   label="&alpheios.latin.prefs.title;" 
-                  image="">
+                  image="chrome://alpheios/skin/icons/languages_32.png">
             <preferences>
                 <preference id="pref-latin-lexicon" 
                         name="extensions.alpheios.latin.url.lexicon" 
