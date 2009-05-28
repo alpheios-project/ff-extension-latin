@@ -329,7 +329,7 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
  */
 Alph.LanguageToolSet.latin.prototype.observe_pref_change = function(a_name,a_value)
 {
-    if (a_name.indexOf('dictionaries.full.default') != -1)
+    if (a_name.indexOf('dictionaries.full') != -1)
     {
         this.loadLexIds();
     }
@@ -345,7 +345,7 @@ Alph.LanguageToolSet.latin.prototype.observe_pref_change = function(a_name,a_val
 Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
 {
     this.full_lex_code =
-        Alph.util.getPref("dictionaries.full.default",this.source_language)
+        Alph.util.getPref("dictionaries.full",this.source_language)
 
     if (this.full_lex_code == '' || this.full_lex_code == null)
     {
@@ -427,22 +427,15 @@ Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
  * Latin-specific implementation of {@link Alph.LanguageTool#get_lemma_id}.
  *
  * @param {String} a_lemmaKey the lemma key
- * @return the lemma id or null if not found
- * @type String
+ * @return {Array} (lemma id, lexicon code) or (null, null) if not found
+ * @type Array
  */
 Alph.LanguageToolSet.latin.prototype.get_lemma_id = function(a_lemmaKey)
 {
-    var lemma_id = null;
-    if (this.idsFile == null)
-    {
-        Alph.util.log("No lemma ids loaded");
-        return;
-    }
-
     // get data from ids file
-    var lemma_id =
-            Alph.LanguageToolSet.latin.lookupLemma(a_lemmaKey, this.idsFile)[1];
-    if (!lemma_id)
+    var lemma_data =
+            Alph.LanguageToolSet.latin.lookupLemma(a_lemmaKey, this.idsFile);
+    if (!lemma_data[1])
     {
         Alph.util.log("id for " +
                       a_lemmaKey +
@@ -450,7 +443,7 @@ Alph.LanguageToolSet.latin.prototype.get_lemma_id = function(a_lemmaKey)
                       this.full_lex_code + ']');
     }
 
-    return lemma_id;
+    return Array(lemma_data[1], this.full_lex_code);
 }
 
 /**
@@ -459,7 +452,7 @@ Alph.LanguageToolSet.latin.prototype.get_lemma_id = function(a_lemmaKey)
  * @param {String} a_lemma lemma to look up
  * @param {Alph.Datafile} a_datafile datafile to search with key
  * @return {Array} (key, data)
- * @type String
+ * @type Array
  */
 Alph.LanguageToolSet.latin.lookupLemma = function(a_lemma, a_datafile)
 {
