@@ -8,16 +8,36 @@
 ]>
 <overlay id="alpheios-latin-prefs-overlay" 
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-    <prefwindow id="alpheios-prefs">
-        <stringbundleset id="alpheios-prefs-stringbundleset">
-            <stringbundle 
-                  id="alpheios-prefs-strings-latin" 
-                   src="chrome://alpheios-latin/locale/alpheios-latin-prefs.properties"/>
-        </stringbundleset>
-        <prefpane id="alpheios-prefs-latin" 
-                  label="&alpheios.latin.prefs.title;" 
-                  image="chrome://alpheios/skin/icons/languages_32.png">
-            <preferences>
+    <!-- strings for the  main preferences window -->
+    <stringbundleset id="alpheios-prefs-stringbundleset">
+        <stringbundle 
+            id="alpheios-prefs-strings-latin" 
+            src="chrome://alpheios-latin/locale/alpheios-latin-prefs.properties"/>
+    </stringbundleset>
+
+    <!-- popup trigger preference -->
+    <prefpane id="alpheios-prefs-features">
+        <preferences>
+            <preference id="latin-pref-trigger" 
+                        name="extensions.alpheios.latin.popuptrigger" 
+                        type="string"/>
+        </preferences>
+    </prefpane>   
+    
+    <!-- popup trigger selection -->
+    <groupbox id="alpheios-mouse-group">
+        <radiogroup preference="latin-pref-trigger">
+            <caption label="&alpheios.latin.prefs.label.trigger;"/>
+            <radio label="&alpheios.prefs.popuptrigger.mousemove;" 
+                   value="mousemove"/>    
+             <radio label="&alpheios.prefs.popuptrigger.dblclick;" 
+                    value="dblclick"/>
+         </radiogroup>
+    </groupbox>
+    
+    <!-- preferences for the service prefs dialog -->
+    <prefpane id="alpheios-prefs-svc-advanced">
+        <preferences>
                 <preference id="pref-latin-lexicon" 
                         name="extensions.alpheios.latin.url.lexicon" 
                         type="string"/>
@@ -27,55 +47,36 @@
                 <preference id="pref-latin-lexicon-timeout" 
                         name="extensions.alpheios.latin.url.lexicon.timeout" 
                         type="int"/>
-                <preference id="pref-latin-grammar" 
-                        name="extensions.alpheios.latin.url.grammar" 
-                        type="string"/>
             </preferences>
-            <hbox flex="1" align="center">
-                <vbox flex="1">
-                    <groupbox>
-                        <caption label="&alpheios.latin.prefs.url;"/>
-                            <label value="&alpheios.latin.prefs.url.lexicon;" 
-                                   control="latin-lexicon"/>
-                            <textbox id="latin-lexicon" 
-                                     preference="pref-latin-lexicon"/>
-                            <label value="&alpheios.latin.prefs.url.lexicon.request;" 
-                                   control="url-latin-lexicon-request"/>
-                            <textbox id="url-latin-lexicon-request" 
-                                    preference="pref-latin-lexicon-request"/>
-                            <label value="&alpheios.latin.prefs.url.lexicon.timeout;" 
-                                   control="url-latin-lexicon-timeout"/>
-                            <textbox id="url-latin-lexicon-timeout" 
-                                    preference="pref-latin-lexicon-timeout"/>      
-                            <label value="&alpheios.latin.prefs.url.grammar;" 
-                                   control="url-latin-grammar"/>
-                            <textbox id="url-latin-grammar" 
-                                    preference="pref-latin-grammar"/>      
-                    </groupbox>
-                </vbox>
-            </hbox>
-        </prefpane>
-        <!-- add the popup trigger preference the mouse tab in the alpheios prefs -->
-        <prefpane id="alpheios-prefs-mouse">
-            <preferences>
-                <preference id="latin-pref-trigger" 
-                            name="extensions.alpheios.latin.popuptrigger" 
-                            type="string"/>
-            </preferences>     
-                <hbox id="alpheios-mouse-hbox">
-                    <groupbox id="alpheios-mouse-group">
-                        <radiogroup preference="latin-pref-trigger">
-                            <caption label="&alpheios.latin.prefs.popuptrigger;"/>
-                            <radio label="&alpheios.latin.prefs.popuptrigger.mousemove;" 
-                                   value="mousemove"/>    
-                             <radio label="&alpheios.latin.prefs.popuptrigger.dblclick;" 
-                                    value="dblclick"/>
-                         </radiogroup>
-                    </groupbox>
-                </hbox>
-           </prefpane>
-    </prefwindow>
+    </prefpane>
     
+    <!-- tab for the service prefs dialog -->
+    <tabbox id="alpheios-svc-tabs-advanced">
+        <tabs id="alpheios-svc-prefs-tabs">
+            <tab label="&alpheios.latin.prefs.tablabel;"/>
+        </tabs>
+        <tabpanels id="alpheios-svc-prefs-details">
+            <tabpanel id="alpheios-svc-prefs-latin">
+                <hbox flex="1" align="center">
+                    <vbox flex="1">
+                        <label value="&alpheios.prefs.url.morph;" 
+                               control="latin-lexicon"/>
+                        <textbox id="latin-lexicon" 
+                                 preference="pref-latin-lexicon"/>
+                        <label value="&alpheios.prefs.url.morph.request;" 
+                               control="url-latin-lexicon-request"/>
+                        <textbox id="url-latin-lexicon-request" 
+                                preference="pref-latin-lexicon-request"/>
+                        <label value="&alpheios.prefs.url.morph.timeout;" 
+                               control="url-latin-lexicon-timeout"/>
+                        <textbox id="url-latin-lexicon-timeout" 
+                                preference="pref-latin-lexicon-timeout"/>      
+                </vbox>
+                </hbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+
      <!-- add the Latin preference for overriding the panel defaults -->
     <prefpane id="alpheios-prefs-windows">
         <preferences>
@@ -88,7 +89,7 @@
     <!-- add the Latin tab to panel preferences tabpanel -->
     <tabbox id="alpheios-panel-prefs" >
         <tabs id="panel-prefs-tabs">
-            <tab label="&alpheios.latin.prefs.panels.tablabel;"/>
+            <tab label="&alpheios.latin.prefs.tablabel;"/>
         </tabs>
         <tabpanels id="panel-prefs-tabpanels">
             <tabpanel id="panel-prefs-tabpanel-latin" align="vertical">
@@ -97,8 +98,8 @@
                         <checkbox id="panel-override-latin" 
                                   preference="pref-panel-override-latin"/>
                         <label control="panel-override-latin" value="&alpheios.prefs.panels.use.defaults;"/>
-                        <button oncommand="Alph.prefs.restore_panel_defaults('latin');"
-                                label="&alpheios.latin.prefs.panels.restore.defaults;"/>
+                        <button oncommand="Alph.prefs.restore_panel_defaults(this);"
+                                label="&alpheios.prefs.panels.restore.defaults;"/>
                     </hbox>
                     <groupbox id="panel-prefs-box-latin"/>
                 </vbox>
@@ -108,7 +109,7 @@
     <tabbox id="dict-prefs">
         <tabs id="dicts-prefs-language-tabs">
             <tab id="dicts-prefs-language-tabs-latin"
-                 label="&alpheios.latin.prefs.panels.tablabel;"/>
+                 label="&alpheios.latin.prefs.tablabel;"/>
         </tabs>
         <tabpanels id="dicts-prefs-language-details">
             <tabpanel>
@@ -116,4 +117,8 @@
             </tabpanel>
         </tabpanels>
     </tabbox>
+    
+    <vbox id="alpheios-dict-tabs-advanced">
+        <vbox id="dicts-prefs-language-details-adv-latin" hidden="true"/> 
+    </vbox>
 </overlay>

@@ -1,11 +1,2 @@
-<!ENTITY alpheios.latin.prefs.title "Latin Settings">
-<!ENTITY alpheios.latin.prefs.url "Latin Services">
-<!ENTITY alpheios.latin.prefs.url.lexicon "Lexicon URL">
-<!ENTITY alpheios.latin.prefs.url.lexicon.request "Lexicon Request Parameters">
-<!ENTITY alpheios.latin.prefs.url.lexicon.timeout "Lexicon Request Timeout">
-<!ENTITY alpheios.latin.prefs.url.grammar "Grammar URL">
-<!ENTITY alpheios.latin.prefs.popuptrigger "Latin:">
-<!ENTITY alpheios.latin.prefs.popuptrigger.mousemove "mousemove">
-<!ENTITY alpheios.latin.prefs.popuptrigger.dblclick "dblclick">
-<!ENTITY alpheios.latin.prefs.panels.tablabel "Latin">
-<!ENTITY alpheios.latin.prefs.panels.restore.defaults "Restore Latin Defaults">
+<!ENTITY alpheios.latin.prefs.label.trigger "Latin:">
+<!ENTITY alpheios.latin.prefs.tablabel "Latin">

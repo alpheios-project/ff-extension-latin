@@ -5,5 +5,8 @@ skin	alpheios-latin	classic/1.0	jar:chrome/alpheios-latin.jar!/skin/
 
 overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin.xul
 overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
+overlay chrome://alpheios/content/alpheios-svc-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
+overlay chrome://alpheios/content/alpheios-dict-prefs-adv.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
+overlay chrome://alpheios/content/alpheios-panel-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
 style   chrome://global/content/customizeToolbar.xul    chrome://alpheios-latin/skin/alpheios-latin.css
 
