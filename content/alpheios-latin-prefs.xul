@@ -119,6 +119,8 @@
     </tabbox>
     
     <vbox id="alpheios-dict-tabs-advanced">
-        <vbox id="dicts-prefs-language-details-adv-latin" hidden="true"/> 
+       <groupbox id="dicts-prefs-language-details-adv-latin" hidden="true">
+            <caption label="&alpheios.latin.prefs.tablabel;"/>
+        </groupbox> 
     </vbox>
 </overlay>
