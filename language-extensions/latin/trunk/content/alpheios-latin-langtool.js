@@ -332,6 +332,7 @@ Alph.LanguageToolSet.latin.prototype.observe_pref_change = function(a_name,a_val
     if (a_name.indexOf('dictionaries.full') != -1)
     {
         this.loadLexIds();
+        this.lexicon_setup();
     }
 
 }
