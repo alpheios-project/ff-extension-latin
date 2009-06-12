@@ -94,15 +94,12 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
 {
     var params = a_params || {};
 
-    // initialize the suffix arrays
-    // TODO should flip this to be a single object keys on infl_type
-    params.suffixes = {};
     params.entries = {};
+    var form = Alph.$(".alph-word",a_node).attr("context");
 
     for (var infl_type in Alph.LanguageToolSet.latin.INFLECTION_MAP )
     {
         var key = Alph.LanguageToolSet.latin.INFLECTION_MAP[infl_type].keys[0];
-        params.suffixes[key] = [];
         params.entries[key] = [];
     }
 
@@ -200,20 +197,17 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     {
                         params.showpofs = infl_type;
                     }
-                    params.suffixes[infl_type].push(
-                        Alph.$(".alph-suff",this).get());
-
                     params.entries[infl_type].push(
                         Alph.$(this).parent(".alph-entry").get(0));
 
 
-                    // duplicate suffixes if necessary
+                    // duplicate entries if necessary
                     var num_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys.length;
                     for (var i=1; i<num_pofs; i++)
                     {
                         var extra_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys[i];
-                        params.suffixes[extra_pofs].push(
-                        Alph.$(".alph-suff",this).get());
+                        params.entries[extra_pofs].push(
+                            Alph.$(this).parent(".alph-entry").get(0));
                     }
 
                     // identify the correct file and links for the inflection type
@@ -234,7 +228,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
     // identify the correct xslt parameters for the requested inflection type
     if (params.showpofs)
     {
-        Alph.LanguageToolSet.latin.setInflectionXSL(params,params.showpofs);
+        Alph.LanguageToolSet.latin.setInflectionXSL(params,params.showpofs,form);
     }
     return params;
 }
@@ -244,13 +238,17 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
  * @param {String} a_params the other params for the window
  * @param {String} a_infl_type the inflection type
  */
-Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
+Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
 {
     // TODO still need to link to big verb table
 
     a_params.xslt_params = {};
     a_params.xslt_params.fragment = 1;
     a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
+    a_params.xslt_params.form = a_form || "";
+    // wordsxml outputs suffixes in ascii so we need to transliterate
+    // the unicode in the ending tables for matching
+    a_params.xslt_params.translit_ending_table_match = true;
 
     // get rid of the selected endings parameter if we couldn't find any
     if (typeof a_params.xslt_params.selected_endings == "undefined"
@@ -261,23 +259,38 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
 
     if (a_infl_type == 'verb_irregular')
     {
+        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-irreg.xml';
         a_params.xslt_url = 'chrome://alpheios-latin/skin/alph-verb-conj-irreg.xsl';
         a_params.xslt_params.hdwd = a_params.hdwd;
     }
     else if ( a_infl_type.indexOf('verb_') == 0 )
     {
+        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-supp.xml';
-        a_params.xslt_url = 'chrome://alpheios-latin/skin/alph-verb-conj-supp.xsl';
+        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-filtered.xsl';
 
         var mood = (a_infl_type.split(/_/))[1];
-        a_params.xslt_params.mood = mood;
-
+        //a_params.xslt_params.mood = mood;
+        a_params.xslt_params.filter_key = 'mood';
+        a_params.xslt_params.filter_value = mood;
+        a_params.xslt_params.group1 = 
+            (mood == 'gerundive' || mood == 'supine') ? 'case' : 'tense';
+        a_params.xslt_params.group2 = 'num';
+        a_params.xslt_params.group3 = 'pers';
+        a_params.xslt_params.group4 = 'voice';
+        a_params.xslt_params.group5 = 'conj';
+        a_params.xslt_params.match_pofs = 'verb'; 
     }
     else if ( a_infl_type == 'verb' )
     {
+        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-verb-conj-group.xsl';
+        a_params.xslt_params.group1 = 'tense';
+        a_params.xslt_params.group2 = 'num';
+        a_params.xslt_params.group3 = 'pers';
+        a_params.xslt_params.match_pofs = 'verb';
 
         if (! a_params.order )
         {
@@ -295,13 +308,10 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type)
     }
     else
     {
+        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
         a_params.xml_url =
             'chrome://alpheios-latin/content/inflections/alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
-
-        // wordsxml outputs suffixes in ascii so we need to transliterate
-        // the unicode in the ending tables for matching
-        a_params.xslt_params.translit_ending_table_match = true;
 
         a_params.xslt_params.match_pofs = a_infl_type;
 
