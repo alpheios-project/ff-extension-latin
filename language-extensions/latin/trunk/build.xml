@@ -12,7 +12,7 @@
 	<property name="release.id" value="0.3" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
 	<property name="package" value="${app.name}-${release.id}.xpi"/>
-	<property name="extras" value="grammar,wordsxml,ls"/>
+	<property name="extras" value="grammar,wordsxml,ls,inflect"/>
 	
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 	

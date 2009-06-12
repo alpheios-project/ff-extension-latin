@@ -64,7 +64,7 @@
             <xsl:otherwise>
                 <html>
                     <head>
-                        <link rel="stylesheet" type="text/css" href="alph-verb-conj-group.css"/>
+                        <link rel="stylesheet" type="text/css" href="alph-infl.css"/>
                     </head>
                     <body>
                         <xsl:call-template name="verbtable">
@@ -96,7 +96,7 @@
                 <xsl:call-template name="add-footnote">
                     <xsl:with-param name="item" select="//conjugation/hdwd-set/hdwd[text() = string($hdwd)]"/>
                 </xsl:call-template>
-            </caption>
+            </caption>    
 
             <!-- add the column groups -->            
             <xsl:call-template name="colgroups">
