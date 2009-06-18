@@ -431,6 +431,9 @@ Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
             }
         }
     );
+    var copyright = this.get_string('popup.credits');
+    Alph.$('#alph-morph-credits',a_node).html(copyright);
+    
 }
 
 /**
