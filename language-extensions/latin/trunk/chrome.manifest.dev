@@ -8,4 +8,5 @@ overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-latin/
 overlay chrome://alpheios/content/alpheios-svc-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
 overlay chrome://alpheios/content/alpheios-dict-prefs-adv.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
 overlay chrome://alpheios/content/alpheios-panel-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
+overlay chrome://alpheios/content/alpheios-site-prefs.xul    chrome://alpheios-latin/content/alpheios-latin-prefs.xul
 style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-latin/skin/alpheios-latin.css

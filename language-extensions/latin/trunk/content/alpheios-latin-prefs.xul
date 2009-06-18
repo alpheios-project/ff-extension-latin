@@ -123,4 +123,17 @@
             <caption label="&alpheios.latin.prefs.tablabel;"/>
         </groupbox> 
     </vbox>
+    
+     <tabbox id="site-prefs">
+        <tabs id="site-prefs-language-tabs">
+            <tab id="site-prefs-language-tabs-latin"
+                 label="&alpheios.latin.prefs.tablabel;"/>
+        </tabs>
+        <tabpanels id="site-prefs-language-details">
+            <tabpanel>
+                <vbox id="site-prefs-language-details-latin"/> 
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+    
 </overlay>
