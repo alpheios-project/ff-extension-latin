@@ -23,3 +23,4 @@ pref("extensions.alpheios.latin.dictionary.full.search.url",
 pref("extensions.alpheios.latin.dictionary.full.search.lemma_param","l");
 pref("extensions.alpheios.latin.dictionary.full.search.id_param","n");
 pref("extensions.alpheios.latin.dictionary.full.search.multiple",true);
+pref("extensions.alpheios.latin.sites.autoenable","http://www.thelatinlibrary.com,http://thelatinlibrary.com");
