@@ -270,7 +270,9 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-supp.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-filtered.xsl';
 
-        var mood = (a_infl_type.split(/_/))[1];
+        // we use verb_participle as a mood in morphology popup, so keep that, otherwise
+        // strip the verb_prefix
+        var mood = a_infl_type == 'verb_participle' ? a_infl_type : (a_infl_type.split(/_/))[1];
         //a_params.xslt_params.mood = mood;
         a_params.xslt_params.filter_key = 'mood';
         a_params.xslt_params.filter_value = mood;
