@@ -1,1 +1,15 @@
 /* TODO */
+.alph-hdwd, 
+.alph-phrase, 
+.alph-term, 
+.alph-infl-form,
+#alph-infl-table .ending, 
+#alph-infl-table caption,   
+#alph-query-frame .answer,
+g text,
+*:lang(la), 
+*:lang(la),
+*.latin 
+{
+    font-family: Georgia, "New Athena Unicode", "Arial Unicode MS", sans-serif;
+}
