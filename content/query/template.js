@@ -619,8 +619,22 @@ function load_forms(a_file,a_xslt,a_xslt_param)
  */
 function replace_string(a_elem,a_props)
 {
-    var newtext = this.get_string($(a_elem).text());
-    $(a_elem).text(newtext);          
+    var my_obj = this;
+    if ($(a_elem).children().length > 0)
+    {
+        $(a_elem).children().each(
+            function()
+            {
+                var newtext = my_obj.get_string($(this).text());
+                $(this).text(newtext);
+            }
+        );
+    }
+    else
+    {
+        var newtext = this.get_string($(a_elem).text());
+        $(a_elem).text(newtext);
+    }
 }
 
 /**
