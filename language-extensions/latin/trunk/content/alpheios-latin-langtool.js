@@ -263,6 +263,12 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-irreg.xml';
         a_params.xslt_url = 'chrome://alpheios-latin/skin/alph-verb-conj-irreg.xsl';
         a_params.xslt_params.hdwd = a_params.hdwd;
+        // too much work to support query for irregular verbs in the alpha
+         if (a_params.mode == 'query')
+        {
+            a_params.xml_url = null;
+            a_params.xslt_url = null;
+        }
     }
     else if ( a_infl_type.indexOf('verb_') == 0 )
     {
@@ -283,6 +289,15 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.xslt_params.group4 = 'voice';
         a_params.xslt_params.group5 = 'conj';
         a_params.xslt_params.match_pofs = 'verb'; 
+        /**
+         * in query mode, use the query xsl 
+         */
+        if (a_params.mode == 'query')
+        {
+            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-filtered-query.xsl';
+         
+        }
+
     }
     else if ( a_infl_type == 'verb' )
     {
@@ -306,6 +321,21 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_params.group4 = order[0];
             a_params.xslt_params.group5 = order[1];
             a_params.xslt_params.group6 = order[2];
+        }
+        
+        /**
+         * in query mode, restrict inflections to the selected form's conjugation
+         */
+        if (a_params.mode == 'query')
+        {
+            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-filtered-query.xsl';
+            a_params.xslt_params.filter_key = 'conj';
+            a_params.xslt_params.filter_value = 
+                Alph.$('.alph-conj',a_params.xslt_params.selected_endings).attr('context');
+            a_params.xslt_params.group4 = 'voice';
+            a_params.xslt_params.group5 = 'mood';
+            a_params.xslt_params.group6 = '';
+  
         }
     }
     else
