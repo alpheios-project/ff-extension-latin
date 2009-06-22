@@ -1,0 +1,220 @@
+.query-table {
+    clear: both;
+    width:100%;
+    margin-top: 2em;
+}
+
+.selected {
+    background-color: #FFEE77;
+}
+
+.query-table-header {
+    text-align: center;
+    font-weight: bold;
+}
+
+.query-col-header {
+    font-weight: bold;
+}
+
+.query-cols {
+    margin-bottom: 1em;
+    margin-right: 1em;
+    float: left;
+    border-right: 1px dashed black;
+}
+
+.query-col {
+    margin: 1em;
+}
+
+.choice {
+    cursor: pointer;
+    vertical-align: top;
+    position: relative;
+    /**margin-bottom: 1em;**/
+}
+
+.choice.noselect .attribute{
+    cursor: default;
+    font-weight: lighter;
+    color: #666666;
+}
+
+.choice.correct .attribute, .choice.incorrect .attribute{
+    cursor: default;
+}
+
+.choice.correct input, .choice.incorrect input {
+    display: none;
+}
+
+div.invalid {
+    visibility: hidden;
+}
+
+.buttons {
+    clear: both;
+    margin-top: 1em;
+}
+
+.showform {
+    visibility: hidden;
+    vertical-align: bottom;
+    font-weight: normal;
+    color: #333333;
+}
+
+.selected-form {
+    float: left;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.form-att {
+    font-style: italic;
+    font-size: 85%;
+    padding-left: 1em;
+}
+
+.form-sep {
+    padding-left:.25em;
+    padding-right: .5em;
+}
+
+.query-decl {
+    margin-top: 2em;
+    padding-left: .25em;
+}
+
+#alph-infl-table, #alph-infl-table table {
+    margin-left: .5em;
+    margin-right: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#alph-infl-table caption {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+#alph-infl-table td, #alph-infl-table th {
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 2px;
+    font-weight: normal;
+}
+
+#alph-infl-table th.emptyheader {
+    border-left: none;
+    border-right: none;
+}
+
+#alph-infl-table tr#headerrow1 th:first-child {
+    visibility: hidden;
+    border-bottom: 0;
+}
+
+#alph-infl-table tr#headerrow2 th:first-child {
+    visibility: hidden;
+    border-top: 0;
+}
+
+
+#alph-infl-table td.ending-group .ending {
+    visibility: hidden;
+    color: #333333;
+    cursor: pointer;
+    font-size: 110%;
+}
+
+.incorrect {
+    background-color: #D1D1D0;
+}
+
+#alph-infl-table td.ending-group.correct .ending{
+    color: green;
+    font-weight: bold;
+}
+
+#alph-infl-table td.ending-group .ending.showform{
+    visibility: visible;
+    cursor: default;
+}
+
+
+#alph-infl-table td.ending-group .ending.matchingform{
+    color: #333333;
+    background-color: #73CCDE;
+}
+
+#alph-infl-table td.ending-group.correct .ending.matchingform{
+    color: green;
+    background-color: white;
+}
+
+
+#alph-infl-table tr.group1row * {
+    border-bottom: none;
+}
+
+#alph-infl-table tr.group2row * {
+    border-top: none;
+}
+
+#alph-infl-table tr.group1row th, #alph-infl-table tr.group2row th {
+    white-space: nowrap;
+    font-style: italic;
+    border-right: none;
+}
+
+#alph-infl-table tr.group1row td, #alph-infl-table tr.group2row td {
+    border-left: none;
+    border-right: none;
+}
+
+#alph-infl-table td.invalid, #alph-infl-table td.ending-group.incorrect.invalid {
+    background-color: #4E6476;
+}
+
+.notfirst {
+    padding-left: 0px;
+
+}
+.notfirst:before {
+    content: ", ";
+
+}
+/* hide a bunch of things on the inflection table when in query mode */
+#alph-infl-table .caption,  
+#alph-infl-table .alph-infl-form,
+#alph-infl-table .alph-reflink
+{
+    display:none;
+}
+
+#alph-infl-table .caption.query-caption 
+{
+   display:block;
+}  
+
+/* okay to show the form in the hint*/
+#alph-infl-table .alpheios-hint .alph-infl-form {
+    display: inline;
+    font-weight: bold;
+}
+
+#alph-infl-table .title {
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+#alph-infl-table tr#filterrow th {
+    border-right: none;
+    white-space: nowrap; 
+    font-weight: bold;
+}
