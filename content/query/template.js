@@ -536,6 +536,12 @@ function check_answer(a_event)
     if (num_cols ==  num_correct)
     {
         show_all_forms(parent_doc,a_event);
+        // only execute the callback once per query
+        if (typeof a_event.data.callback_executed == "undefined")
+        {
+            a_event.data.callback_executed = true;
+            a_event.data.callback();
+        }
     }
 }
 
@@ -689,7 +695,7 @@ function show_all_forms(a_doc,a_event)
     $("#alph-infl-table .ending",a_doc).each(
         function()
         {
-            show_table_form(a_event,this,true);    
+            show_table_form(a_event,this);    
         }
     );
 }
@@ -700,22 +706,14 @@ function show_all_forms(a_doc,a_event)
  * by process of elimination
  * @param {Event} a_event the event which initiated the action
  * @param {Element} a_cell the DOM node containing the form
- * @param {Boolean} a_skip_callback flag to indicate not to execute callback
- *                                  upon correct form shown
  */
-function show_table_form(a_event,a_cell,a_skip_callback)
+function show_table_form(a_event,a_cell)
 {
     // if a_cell is null, then called from an event handler
     if (a_cell == null) {
         a_cell = $(".ending",this).get(0);
     }
-    
-    // default is to execute the callback if the correct
-    // form is shown
-    if (typeof a_skip_callback == "undefined") {
-        a_skip_callback = false;
-    }
-            
+                
     var must_match = 0;
     var matched = 0;
     
@@ -861,8 +859,10 @@ function show_table_form(a_event,a_cell,a_skip_callback)
                 answer_terms.push(a_event.data.answer.attributes[prop]);
             }
         }
-        if (! a_skip_callback)
+        // only execute the callback once per query
+        if (typeof a_event.data.callback_executed == "undefined")
         {
+            a_event.data.callback_executed = true;
             a_event.data.callback();
         }
     }
