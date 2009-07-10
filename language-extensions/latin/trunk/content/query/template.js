@@ -96,7 +96,7 @@ var TEMPLATE =
      */
     noun:
           { data_file: "chrome://alpheios-latin/content/inflections/alph-infl-noun.xml",
-            xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+            xslt_file: "alpheios,alph-infl-substantive-query.xsl",
             xslt_params: this.get_noun_params,
             exclude_test: this.missing_decl,
             invalidate_empty_cells: false,
@@ -112,7 +112,7 @@ var TEMPLATE =
      */
     adjective:
           { data_file: "chrome://alpheios-latin/content/inflections/alph-infl-adjective.xml",
-            xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+            xslt_file: "alpheios,alph-infl-substantive-query.xsl",
             xslt_params: this.get_adj_params,
             exclude_test: this.missing_decl,
             invalidate_empty_cells: false,
@@ -280,7 +280,17 @@ function reset_table(a_event)
  */
 function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
 {
-    var decl_table = load_forms(a_template.data_file, a_template.xslt_file, a_xslt_param);
+    var xslt_proc;
+    if (typeof a_template.xslt_proc == "undefined" || a_template.xslt_proc == null)
+    {
+        var xslt_file = a_template.xslt_file.split(/,/);
+        xslt_proc = Alph.util.get_xslt_processor(xslt_file[0],xslt_file[1]);
+    }
+    else
+    {
+        xslt_proc = a_template.xslt_proc;
+    }
+    var decl_table = load_forms(a_template.data_file, xslt_proc, a_xslt_param);
     var table_elem = decl_table.getElementById("alph-infl-table") 
     $(a_elem).get(0).ownerDocument.importNode(table_elem,true);
     $(table_elem).tableHover({colClass: "",
@@ -583,34 +593,27 @@ function show_form(event)
 /**
  * load the inflection form data
  * @param {String} a_file the url to the xml file containing the data
- * @param {String} a_xslt the url to the xslt to use to transform the data
+ * @param {String} a_xslt_proc the xslt processor
  * @param {Object} a_xslt_param optional xslt transform parameters
  */
-function load_forms(a_file,a_xslt,a_xslt_param)
+function load_forms(a_file,a_xslt_proc,a_xslt_param)
 {
         var formXML = document.implementation.createDocument("", "", null);
         formXML.async = false;
         formXML.load(a_file);
-        
-        var xsltDoc = document.implementation.createDocument("", "", null);
-        xsltDoc.async = false;
-        xsltDoc.load(a_xslt);
-
-        var xsltProcessor = new XSLTProcessor();
-        xsltProcessor.importStylesheet(xsltDoc);
-        
+                
         if (typeof a_xslt_param != "undefined")
         {
             for (var param in a_xslt_param)
             {
-                xsltProcessor.setParameter("",param,a_xslt_param[param]);
+                a_xslt_proc.setParameter("",param,a_xslt_param[param]);
             }
         }
         var formHTML = '';
         try
         {
             // add the xslt parameters
-            formHTML = xsltProcessor.transformToDocument(formXML);
+            formHTML = a_xslt_proc.transformToDocument(formXML);
         }
         catch(a_e)
         {
@@ -1039,7 +1042,7 @@ function get_inflections(a_template,a_ans)
     {
         var params = a_ans.lang_tool.getInflectionTable(a_ans.src_node, { mode: 'query' } );
         a_template.data_file = params.xml_url;
-        a_template.xslt_file = params.xslt_url;
+        a_template.xslt_proc = params.xslt_processor;
     }
     // add the conjugation to the answer, if we have it
     var conj = $(".alph-conj",a_ans.src_node).attr('context');

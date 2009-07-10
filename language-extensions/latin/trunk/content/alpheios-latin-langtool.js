@@ -261,20 +261,20 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
     {
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-irreg.xml';
-        a_params.xslt_url = 'chrome://alpheios-latin/skin/alph-verb-conj-irreg.xsl';
+        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-verb-conj-irreg.xsl');
         a_params.xslt_params.hdwd = a_params.hdwd;
         // too much work to support query for irregular verbs in the alpha
          if (a_params.mode == 'query')
         {
             a_params.xml_url = null;
-            a_params.xslt_url = null;
+            a_params.xslt_processor = null;
         }
     }
     else if ( a_infl_type.indexOf('verb_') == 0 )
     {
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-supp.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-filtered.xsl';
+        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered.xsl');
 
         // we use verb_participle as a mood in morphology popup, so keep that, otherwise
         // strip the verb_prefix
@@ -294,7 +294,7 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-filtered-query.xsl';
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered-query.xsl');
          
         }
 
@@ -303,7 +303,7 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
     {
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-verb-conj-group.xsl';
+        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-verb-conj-group.xsl');
         a_params.xslt_params.group1 = 'tense';
         a_params.xslt_params.group2 = 'num';
         a_params.xslt_params.group3 = 'pers';
@@ -328,7 +328,7 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-filtered-query.xsl';
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered-query.xsl');
             a_params.xslt_params.filter_key = 'conj';
             a_params.xslt_params.filter_value = 
                 Alph.$('.alph-conj',a_params.xslt_params.selected_endings).attr('context');
@@ -343,7 +343,7 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
         a_params.xml_url =
             'chrome://alpheios-latin/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
 
         a_params.xslt_params.match_pofs = a_infl_type;
 
