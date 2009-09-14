@@ -11,7 +11,7 @@
               value="/Program Files/Apache Group/Apache2/htdocs/alpheios" />
 	<property name="release.id" value="1.0alpha1" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
-	<property name="package" value="${app.name}-${release.id}.xpi"/>
+	<property name="package" value="${app.name}-latest.xpi"/>
 	<property name="extras" value="grammar,wordsxml,ls,inflect"/>
 	
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
