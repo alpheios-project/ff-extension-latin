@@ -1,4 +1,4 @@
-/*
+/**
  * @fileoverview Latin extension of Alph.LanguageTool class
  * @version $Id: alpheios-latin-langtool.js 439 2008-03-27 00:26:41Z BridgetAlmas $
  *
@@ -23,18 +23,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+Components.utils.import("resource://alpheios-latin/alpheios-convert-latin.jsm",Alph);
+
+Alph.LanguageToolFactory.addLang('latin','LanguageTool_Latin');
 
 /**
- * @class  Alph.LanguageToolSet.latin extends {@link Alph.LanguageTool} to define
- * Latin-specific functionality for the alpheios extension.
- *
- * @constructor
+ * @class  Latin implementation of {@link Alph.LanguageTool} 
+ * @extends Alph.LanguageTool
  * @param {String} a_language  the source language for this instance
  * @param {Properties} a_properties additional properties to set as private members of
  *                                  the object (accessor methods will be dynamically created)
- * @see Alph.LanguageTool
  */
-Alph.LanguageToolSet.latin = function(a_lang, props)
+Alph.LanguageTool_Latin = function(a_lang, props)
 {
     Alph.LanguageTool.call(this,a_lang,{});
 };
@@ -42,15 +42,16 @@ Alph.LanguageToolSet.latin = function(a_lang, props)
 /**
  * @ignore
  */
-Alph.LanguageToolSet.latin.prototype = new Alph.LanguageTool();
+Alph.LanguageTool_Latin.prototype = new Alph.LanguageTool();
 
 /**
- * Flag to indicate that this class extends Alph.LanguageTool.
- * (Shouldn't be necessary but because they are not packaged in the same extension
- * the instanceof operator won't work.)
- * @type boolean
+ * loads the Lagin-specific converter object
+ * @see Alph.LanguageTool#loadConverter
  */
-Alph.LanguageToolSet.latin.implementsAlphLanguageTool = true;
+Alph.LanguageTool_Latin.prototype.loadConverter = function()
+{
+    this.d_converter = new Alph.ConvertLatin();  
+};
 
 /**
  *  Mapping table which maps the part of speech or mood
@@ -58,8 +59,10 @@ Alph.LanguageToolSet.latin.implementsAlphLanguageTool = true;
  *  Format is:
  *      pofs or mood: { keys: [array of inflectable table keys]
  *                      links: [array of other links] }
+ * @static
+ * @private
  */
-Alph.LanguageToolSet.latin.INFLECTION_MAP =
+Alph.LanguageTool_Latin.INFLECTION_MAP =
 {     noun: { keys: ['noun'], links: [] },
       // link verb participles to both verb and adjective inflection tables
       adjective: { keys: ['adjective'], links: [] },
@@ -72,7 +75,11 @@ Alph.LanguageToolSet.latin.INFLECTION_MAP =
       verb: { keys: ['verb'], links: [] }
 };
 
-Alph.LanguageToolSet.latin.IRREG_VERBS =
+/**
+ * @static
+ * @private
+ */
+Alph.LanguageTool_Latin.IRREG_VERBS =
 [
     // irregular verbs (Whitaker hdwd)
     'eo, ire, ivi(ii), itus',
@@ -88,18 +95,19 @@ Alph.LanguageToolSet.latin.IRREG_VERBS =
  * Latin-specific implementation of {@link Alph.LanguageTool#getInflectionTable}.
  * @param {Node} a_node the node containing the target word
  * @param {String} a_params optional requested parameters
- * @return the parameters object for the inflection window
+ * @returns the parameters object for the inflection window
  */
-Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_params)
+Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params)
 {
+    var langObj = this;
     var params = a_params || {};
 
     params.entries = {};
     var form = Alph.$(".alph-word",a_node).attr("context");
 
-    for (var infl_type in Alph.LanguageToolSet.latin.INFLECTION_MAP )
+    for (var infl_type in Alph.LanguageTool_Latin.INFLECTION_MAP )
     {
-        var key = Alph.LanguageToolSet.latin.INFLECTION_MAP[infl_type].keys[0];
+        var key = Alph.LanguageTool_Latin.INFLECTION_MAP[infl_type].keys[0];
         params.entries[key] = [];
     }
 
@@ -128,12 +136,12 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
             var dict_hdwd = Alph.$(".alph-hdwd",dict).text();
             // remove the trailing :
             dict_hdwd = dict_hdwd.replace(/\:\s*$/,'');
-            Alph.util.log("hdwd for inflection set: " + dict_hdwd);
+            langObj.s_logger.debug("hdwd for inflection set: " + dict_hdwd);
 
             var irregular = false;
-            for (var i=0; i< Alph.LanguageToolSet.latin.IRREG_VERBS.length; i++)
+            for (var i=0; i< Alph.LanguageTool_Latin.IRREG_VERBS.length; i++)
             {
-                if (dict_hdwd == Alph.LanguageToolSet.latin.IRREG_VERBS[i])
+                if (dict_hdwd == Alph.LanguageTool_Latin.IRREG_VERBS[i])
                 {
                     // reset the context
                     params.hdwd = dict_hdwd;
@@ -141,7 +149,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     break;
                 }
             }
-            Alph.util.log("irregular:" + irregular);
+            langObj.s_logger.debug("irregular:" + irregular);
             var infls = {};
 
             // gather the moods for the verbs
@@ -153,19 +161,19 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     // a supplemental table rather than primary verb pofs table
 
                     var mood = Alph.$(".alph-mood",this).attr('context');
-                    if (Alph.LanguageToolSet.latin.INFLECTION_MAP[mood])
+                    if (Alph.LanguageTool_Latin.INFLECTION_MAP[mood])
                     {
-                        infls[Alph.LanguageToolSet.latin.INFLECTION_MAP[mood].keys[0]] = Alph.$(this).get(0);
+                        infls[Alph.LanguageTool_Latin.INFLECTION_MAP[mood].keys[0]] = Alph.$(this).get(0);
                     }
                 }
             );
             if (irregular)
             {
-                infls[Alph.LanguageToolSet.latin.INFLECTION_MAP['verb_irregular'].keys[0]] = Alph.$(this).get(0);
+                infls[Alph.LanguageTool_Latin.INFLECTION_MAP['verb_irregular'].keys[0]] = Alph.$(this).get(0);
             }
-            for (var pofs in Alph.LanguageToolSet.latin.INFLECTION_MAP)
+            for (var pofs in Alph.LanguageTool_Latin.INFLECTION_MAP)
             {
-                var map_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys[0];
+                var map_pofs = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].keys[0];
 
 
                 // if we couldn't find the part of speech or the part of speech
@@ -202,10 +210,10 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
 
 
                     // duplicate entries if necessary
-                    var num_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys.length;
+                    var num_pofs = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].keys.length;
                     for (var i=1; i<num_pofs; i++)
                     {
-                        var extra_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys[i];
+                        var extra_pofs = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].keys[i];
                         params.entries[extra_pofs].push(
                             Alph.$(this).parent(".alph-entry").get(0));
                     }
@@ -217,8 +225,8 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
 
                     if (params.showpofs == infl_type)
                     {
-                        params.links = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].links;
-                        //Alph.LanguageToolSet.latin.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
+                        params.links = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].links;
+                        //Alph.LanguageTool_Latin.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
                     }
 
                 } // end infl-type
@@ -228,7 +236,8 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
     // identify the correct xslt parameters for the requested inflection type
     if (params.showpofs)
     {
-        Alph.LanguageToolSet.latin.setInflectionXSL(params,params.showpofs,form);
+        params.content_url = Alph.BrowserUtils.getContentUrl(this.getLanguage());
+        Alph.LanguageTool_Latin.setInflectionXSL(params,params.showpofs,form);
     }
     return params;
 }
@@ -238,31 +247,33 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
  * @param {String} a_params the other params for the window
  * @param {String} a_infl_type the inflection type
  */
-Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
+Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
 {
     // TODO still need to link to big verb table
 
     a_params.xslt_params = {};
-    a_params.xslt_params.fragment = 1;
-    a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
-    a_params.xslt_params.form = a_form || "";
+    a_params.xslt_params.e_fragment = 1;
+    a_params.xslt_params.e_selectedEndings = a_params.entries[a_infl_type];
+    a_params.xslt_params.e_form = a_form || "";
     // wordsxml outputs suffixes in ascii so we need to transliterate
     // the unicode in the ending tables for matching
-    a_params.xslt_params.translit_ending_table_match = true;
+    a_params.xslt_params.e_translitEndingTableMatch = true;
 
     // get rid of the selected endings parameter if we couldn't find any
-    if (typeof a_params.xslt_params.selected_endings == "undefined"
-        || a_params.xslt_params.selected_endings.length == 0)
+    if (typeof a_params.xslt_params.e_selectedEndings == "undefined"
+        || a_params.xslt_params.e_selectedEndings.length == 0)
     {
-        delete a_params.xslt_params.selected_endings;
+        delete a_params.xslt_params.e_selectedEndings;
     }
 
+    var html_url = a_params.content_url + '/html/';
+    var xml_url = a_params.content_url + '/inflections/';
     if (a_infl_type == 'verb_irregular')
     {
-        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
-        a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-irreg.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-verb-conj-irreg.xsl');
-        a_params.xslt_params.hdwd = a_params.hdwd;
+        a_params.html_url = html_url + 'alph-infl-verb.html';
+        a_params.xml_url = xml_url + 'alph-verb-conj-irreg.xml';
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-verb-conj-irreg.xsl');
+        a_params.xslt_params.e_hdwd = a_params.hdwd;
         // too much work to support query for irregular verbs in the alpha
          if (a_params.mode == 'query')
         {
@@ -272,42 +283,42 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
     }
     else if ( a_infl_type.indexOf('verb_') == 0 )
     {
-        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
-        a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-supp.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered.xsl');
+        a_params.html_url = html_url + "alph-infl-substantive.html";
+        a_params.xml_url = xml_url + 'alph-verb-conj-supp.xml';
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-filtered.xsl');
 
         // we use verb_participle as a mood in morphology popup, so keep that, otherwise
         // strip the verb_prefix
         var mood = a_infl_type == 'verb_participle' ? a_infl_type : (a_infl_type.split(/_/))[1];
-        //a_params.xslt_params.mood = mood;
-        a_params.xslt_params.filter_key = 'mood';
-        a_params.xslt_params.filter_value = mood;
-        a_params.xslt_params.group1 = 
+        //a_params.xslt_params.e_mood = mood;
+        a_params.xslt_params.e_filterKey = 'mood';
+        a_params.xslt_params.e_filterValue = mood;
+        a_params.xslt_params.e_group1 = 
             (mood == 'gerundive' || mood == 'supine') ? 'case' : 'tense';
-        a_params.xslt_params.group2 = 'num';
-        a_params.xslt_params.group3 = 'pers';
-        a_params.xslt_params.group4 = 'voice';
-        a_params.xslt_params.group5 = 'conj';
-        a_params.xslt_params.match_pofs = 'verb'; 
+        a_params.xslt_params.e_group2 = 'num';
+        a_params.xslt_params.e_group3 = 'pers';
+        a_params.xslt_params.e_group4 = 'voice';
+        a_params.xslt_params.e_group5 = 'conj';
+        a_params.xslt_params.e_matchPofs = 'verb'; 
         /**
          * in query mode, use the query xsl 
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered-query.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-filtered-query.xsl');
          
         }
 
     }
     else if ( a_infl_type == 'verb' )
     {
-        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
-        a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-verb-conj-group.xsl');
-        a_params.xslt_params.group1 = 'tense';
-        a_params.xslt_params.group2 = 'num';
-        a_params.xslt_params.group3 = 'pers';
-        a_params.xslt_params.match_pofs = 'verb';
+        a_params.html_url = html_url + "alph-infl-verb.html";
+        a_params.xml_url = xml_url + 'alph-verb-conj.xml';
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-verb-conj-group.xsl');
+        a_params.xslt_params.e_group1 = 'tense';
+        a_params.xslt_params.e_group2 = 'num';
+        a_params.xslt_params.e_group3 = 'pers';
+        a_params.xslt_params.e_matchPofs = 'verb';
 
         if (! a_params.order )
         {
@@ -318,9 +329,9 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
         var order = a_params.order.split('-');
         if (order.length > 0)
         {
-            a_params.xslt_params.group4 = order[0];
-            a_params.xslt_params.group5 = order[1];
-            a_params.xslt_params.group6 = order[2];
+            a_params.xslt_params.e_group4 = order[0];
+            a_params.xslt_params.e_group5 = order[1];
+            a_params.xslt_params.e_group6 = order[2];
         }
         
         /**
@@ -328,24 +339,24 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered-query.xsl');
-            a_params.xslt_params.filter_key = 'conj';
-            a_params.xslt_params.filter_value = 
-                Alph.$('.alph-conj',a_params.xslt_params.selected_endings).attr('context');
-            a_params.xslt_params.group4 = 'voice';
-            a_params.xslt_params.group5 = 'mood';
-            a_params.xslt_params.group6 = '';
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-filtered-query.xsl');
+            a_params.xslt_params.e_filterKey = 'conj';
+            a_params.xslt_params.e_filterValue = 
+                Alph.$('.alph-conj',a_params.xslt_params.e_selectedEndings).attr('context');
+            a_params.xslt_params.e_group4 = 'voice';
+            a_params.xslt_params.e_group5 = 'mood';
+            a_params.xslt_params.e_group6 = '';
   
         }
     }
     else
     {
-        a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
+        a_params.html_url = html_url + "alph-infl-substantive.html";
         a_params.xml_url =
-            'chrome://alpheios-latin/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
+            xml_url + 'alph-infl-' + a_infl_type + '.xml';
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-substantive.xsl');
 
-        a_params.xslt_params.match_pofs = a_infl_type;
+        a_params.xslt_params.e_matchPofs = a_infl_type;
 
         if (a_params.order )
         {
@@ -353,27 +364,27 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
             var order = a_params.order.split('-');
             if (order.length > 0)
             {
-                a_params.xslt_params.group4 = order[0];
-                a_params.xslt_params.group5 = order[1];
-                a_params.xslt_params.group6 = order[2];
+                a_params.xslt_params.e_group4 = order[0];
+                a_params.xslt_params.e_group5 = order[1];
+                a_params.xslt_params.e_group6 = order[2];
             }
         }
     }
 }
 
 /**
- * Latin-specific implementation of {@link Alph.LanguageTool#observe_pref_change}.
+ * Latin-specific implementation of {@link Alph.LanguageTool#observePrefChange}.
  *
  * calls loadLexIds if the default full dictionary changed
  * @param {String} a_name the name of the preference which changed
  * @param {Object} a_value the new value of the preference
  */
-Alph.LanguageToolSet.latin.prototype.observe_pref_change = function(a_name,a_value)
+Alph.LanguageTool_Latin.prototype.observePrefChange = function(a_name,a_value)
 {
     if (a_name.indexOf('dictionaries.full') != -1)
     {
         this.loadLexIds();
-        this.lexicon_setup();
+        this.lexiconSetup();
     }
 
 }
@@ -384,28 +395,29 @@ Alph.LanguageToolSet.latin.prototype.observe_pref_change = function(a_name,a_val
  * @returns true if successful, otherwise false
  * @type boolean
  */
-Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
+Alph.LanguageTool_Latin.prototype.loadLexIds = function()
 {
-    this.full_lex_code =
-        Alph.util.getPref("dictionaries.full",this.source_language)
+    this.d_fullLexCode =
+        Alph.BrowserUtils.getPref("dictionaries.full",this.d_sourceLanguage)
 
-    if (this.full_lex_code == '' || this.full_lex_code == null)
+    var content_url = Alph.BrowserUtils.getContentUrl(this.d_sourceLanguage);
+    if (this.d_fullLexCode == '' || this.d_fullLexCode == null)
     {
-        this.idsFile == null;
+        this.d_idsFile == null;
     }
     else
     {
         try
         {
-           this.idsFile =
-                new Alph.Datafile("chrome://alpheios-latin/content/dictionaries/" +
-                                  this.full_lex_code +
+           this.d_idsFile =
+                new Alph.Datafile(content_url + "/dictionaries/" +
+                                  this.d_fullLexCode +
                                   "/lat-" +
-                                  this.full_lex_code +
+                                  this.d_fullLexCode +
                                   "-ids.dat",
                                   "UTF-8");
-            Alph.util.log("Loaded Latin ids [" +
-                          this.idsFile.getData().length +
+            this.s_logger.info("Loaded Latin ids [" +
+                          this.d_idsFile.getData().length +
                           " bytes]");
         }
         catch (ex)
@@ -414,7 +426,7 @@ Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
             // provided dictionaries
             // so just quietly log the error in this case
             // later code must take a null ids file into account
-            Alph.util.log("error loading ids: " + ex);
+            this.s_logger.error("error loading ids: " + ex);
             return false;
         }
     }
@@ -425,25 +437,26 @@ Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
  * Latin-specific implementation of {@link Alph.LanguageTool#postTransform}.
  * Looks up the lemma in the file of dictionary ids
  */
-Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
+Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
 {
-    var ids = this.idsFile;
-    var fullLex = this.full_lex_code;
+    var langObj = this;
+    var ids = this.d_idsFile;
+    var fullLex = this.d_fullLexCode;
     Alph.$(".alph-entry", a_node).each(
         function()
         {
             var lemmaKey = Alph.$(".alph-dict", this).attr("lemma-key");
             var idReturn =
-                    Alph.LanguageToolSet.latin.lookupLemma(lemmaKey, ids);
+                    Alph.LanguageTool_Latin.lookupLemma(lemmaKey, ids);
             var hdwd = idReturn[0];
             var lemmaId = idReturn[1];
 
             // set lemma attributes
             if (hdwd)
             {
-                Alph.util.log('adding @lemma-key="' + hdwd + '"');
-                Alph.util.log('adding @lemma-lang="lat"');
-                Alph.util.log('adding @lemma-lex="' + fullLex + '"');
+                langObj.s_logger.debug('adding @lemma-key="' + hdwd + '"');
+                langObj.s_logger.debug('adding @lemma-lang="lat"');
+                langObj.s_logger.debug('adding @lemma-lex="' + fullLex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
                 Alph.$(".alph-dict", this).attr("lemma-lang", "lat");
                 Alph.$(".alph-dict", this).attr("lemma-lex", fullLex);
@@ -452,43 +465,43 @@ Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
                 if (lemmaId)
                 {
                     // set lemma attributes
-                    Alph.util.log('adding @lemma-id="' + lemmaId + '"');
+                    langObj.s_logger.debug('adding @lemma-id="' + lemmaId + '"');
                     Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
                 }
                 else
                 {
-                    Alph.util.log(
+                    langObj.s_logger.warn(
                         "id for " + hdwd + " not found [" + fullLex + "]");
                 }
             }
         }
     );
-    var copyright = this.get_string('popup.credits');
+    var copyright = this.getString('popup.credits');
     Alph.$('#alph-morph-credits',a_node).html(copyright);
     
 }
 
 /**
- * Latin-specific implementation of {@link Alph.LanguageTool#get_lemma_id}.
+ * Latin-specific implementation of {@link Alph.LanguageTool#getLemmaId}.
  *
  * @param {String} a_lemmaKey the lemma key
- * @return {Array} (lemma id, lexicon code) or (null, null) if not found
+ * @returns {Array} (lemma id, lexicon code) or (null, null) if not found
  * @type Array
  */
-Alph.LanguageToolSet.latin.prototype.get_lemma_id = function(a_lemmaKey)
+Alph.LanguageTool_Latin.prototype.getLemmaId = function(a_lemmaKey)
 {
     // get data from ids file
     var lemma_data =
-            Alph.LanguageToolSet.latin.lookupLemma(a_lemmaKey, this.idsFile);
+            Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.d_idsFile);
     if (!lemma_data[1])
     {
-        Alph.util.log("id for " +
+        this.s_logger.warn("id for " +
                       a_lemmaKey +
                       " not found [" +
-                      this.full_lex_code + ']');
+                      this.d_fullLexCode + ']');
     }
 
-    return Array(lemma_data[1], this.full_lex_code);
+    return Array(lemma_data[1], this.d_fullLexCode);
 }
 
 /**
@@ -496,10 +509,10 @@ Alph.LanguageToolSet.latin.prototype.get_lemma_id = function(a_lemmaKey)
  *
  * @param {String} a_lemma lemma to look up
  * @param {Alph.Datafile} a_datafile datafile to search with key
- * @return {Array} (key, data)
+ * @returns {Array} (key, data)
  * @type Array
  */
-Alph.LanguageToolSet.latin.lookupLemma = function(a_lemma, a_datafile)
+Alph.LanguageTool_Latin.lookupLemma = function(a_lemma, a_datafile)
 {
     // if no datafile or no lemma
     if (!a_datafile || !a_lemma)

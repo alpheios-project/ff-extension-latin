@@ -3,7 +3,7 @@ pref("extensions.alpheios.latin.chromepkg","alpheios-latin");
 pref("extensions.alpheios.latin.languagecode","la");
 pref("extensions.alpheios.latin.base_unit","word");
 pref("extensions.alpheios.latin.context_handler","grammarContext");
-pref("extensions.alpheios.latin.methods.convert",'latin_to_ascii');
+pref("extensions.alpheios.latin.methods.convert",'latinToAscii');
 pref("extensions.alpheios.latin.methods.lexicon",'webservice');
 pref("extensions.alpheios.latin.methods.startup",'loadLexIds');
 pref("extensions.alpheios.latin.url.lexicon", 'http://localhost:8200');

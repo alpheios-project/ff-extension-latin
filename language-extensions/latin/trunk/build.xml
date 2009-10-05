@@ -9,7 +9,7 @@
 	          value="${ff.test.dir}/extensions/${app.name}" />
 	<property name="deploy.dir"
               value="/Program Files/Apache Group/Apache2/htdocs/alpheios" />
-	<property name="release.id" value="1.0alpha3" />
+	<property name="release.id" value="1.0alpha4" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
 	<property name="package" value="${app.name}-latest.xpi"/>
 	<property name="extras" value="grammar,wordsxml,ls,inflect"/>
@@ -101,6 +101,7 @@
 				<include name="chrome.manifest" />
 				<include name="install.rdf" />
 				<include name="mhttpd.conf" />
+				<include name="modules/**" />
 				<include name="defaults/**" />
 				<include name="**/platform/**" />
 				<exclude name="**/.*" />
