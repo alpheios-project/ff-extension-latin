@@ -95,9 +95,10 @@ Alph.LanguageTool_Latin.IRREG_VERBS =
  * Latin-specific implementation of {@link Alph.LanguageTool#getInflectionTable}.
  * @param {Node} a_node the node containing the target word
  * @param {String} a_params optional requested parameters
+ * @param {Boolean} a_checkonly optional flag to skip load of xsl
  * @returns the parameters object for the inflection window
  */
-Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params)
+Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params, a_checkonly)
 {
     var langObj = this;
     var params = a_params || {};
@@ -234,7 +235,7 @@ Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params
         }
     );
     // identify the correct xslt parameters for the requested inflection type
-    if (params.showpofs)
+    if (params.showpofs && ! a_checkonly)
     {
         params.content_url = Alph.BrowserUtils.getContentUrl(this.getLanguage());
         Alph.LanguageTool_Latin.setInflectionXSL(params,params.showpofs,form);

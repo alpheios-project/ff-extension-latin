@@ -67,9 +67,9 @@ Alph.Grammar = {
             // add a callback to the parameters object
             // which can be called by the opener code 
             // to reload the window with new arguments
-            if (typeof params.update_args_callback == 'undefined')
+            if (typeof params.updateArgsCallback == 'undefined')
             {
-                params.update_args_callback =
+                params.updateArgsCallback =
                     function(a_args)
                         {
                             Alph.Grammar.setStartHref(a_args);
