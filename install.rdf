@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Revision$-->
-<!-- $BuildId: 189$-->
+<!-- $BuildId: 189+$-->
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<Description about="urn:mozilla:install-manifest">
 		<em:name>Alpheios Latin Tools</em:name>
-		<em:version>1.0alpha4.2224.20091019</em:version>
+		<em:version>1.0alpha4.2225.20091019</em:version>
 		<em:description></em:description>
 		<em:creator>Cantus Foundation</em:creator>
 		<em:id>{7dd2b42f-3db8-4833-88c4-5a9e3788017b}</em:id>
@@ -27,8 +27,8 @@
 		<em:iconURL>chrome://alpheios/skin/icons/alpheios_32.ico</em:iconURL>
 		<em:homepageURL>http://alpheios.net</em:homepageURL>
 		<em:optionsURL>chrome://alpheios/content/alpheios-prefs.xul</em:optionsURL>
-		<em:updateURL>http://alpheios.net/xpi-updates/update.rdf</em:updateURL>
-		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOd5Mjthp4ZkEF0g6sF6fHbUb92PJTSSPxjjdsuDOXG9dUTVwIDjW183lTZawP7+4E8PmUeqVl5GCjKRCAhAXmSV+X/IYgSuiTOTjuXUJ/ylA9EGSo2dHVeGJ834XIKe5NK7NL08EFxst58vCASTViuMv5GpeIYtPvbj7PyXJ82QIDAQAB</em:updateKey>
+		
+		
         <em:requires>
             <Description>
                 <!-- Alpheios -->
