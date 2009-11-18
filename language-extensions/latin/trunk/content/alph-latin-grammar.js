@@ -173,9 +173,6 @@ Alph.Grammar = {
             typeof href_target != "undefined"
             )
         {
-            this.s_logger.debug("Resetting href to " + 
-                Alph.Grammar.BASE_URL + 
-                href_target + href);
             Alph.$(this).attr("href", 
                 Alph.Grammar.BASE_URL + 
                 href_target + href);
