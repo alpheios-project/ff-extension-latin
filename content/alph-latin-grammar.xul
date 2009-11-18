@@ -9,7 +9,7 @@
 <window id="alph-latin-grammar" title="&alpheios.latin.grammar.title;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         windowtype="alph-window"
-        onload="Alph.Grammar.onLoad();">;
+        onload="Alph.Grammar.onLoad();">
     <script type="application/x-javascript" src="chrome://alpheios/content/alpheios-utils.js" />
     <script type="application/x-javascript" src="chrome://alpheios-latin/content/alph-latin-grammar.js" />
 
