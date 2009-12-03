@@ -24,63 +24,20 @@
 /**
  * @class Latin Grammar window functionality
  */
-Alph.Grammar = {
+Alph.LatinGrammar = {
     
    
     BASE_URL: Alph.BrowserUtils.getContentUrl('latin') + '/grammar/',
 
     /**
-     * logger for the window
-     * @type Log4Moz.Logger
-     * @static
+     * initialize the table of contents
      */
-    s_logger: Alph.BrowserUtils.getLogger('Alpheios.Grammar'), 
-    
-    /**
-     * onLoad 
-     * load handler for the grammar window
-     */
-    onLoad: function() {
-        var toc_doc = Alph.$("#alph-latin-grammar-toc").get(0).contentDocument;
-        var content_browser = Alph.$("#alph-latin-grammar-content");
-        
-        // Add a handler to main grammar content browser window 
-        // which adds a click handler to the links in the grammar
-        // content document whenever a new document is loaded
-        document.getElementById("alph-latin-grammar-content")
-            .addEventListener(
-                "DOMContentLoaded",
-                function() 
-                {
-                    Alph.$("a",this.contentDocument)
-                        .click(Alph.Grammar.contentClickHandler);
-                },
-                true
-                );
-
-        // check the window arguments
-        var params;
-        if (typeof window.arguments != "undefined")
-        {
-            params=window.arguments[0];   
-
-            // add a callback to the parameters object
-            // which can be called by the opener code 
-            // to reload the window with new arguments
-            if (typeof params.updateArgsCallback == 'undefined')
-            {
-                params.updateArgsCallback =
-                    function(a_args)
-                        {
-                            Alph.Grammar.setStartHref(a_args);
-                        }
-            }
-            this.setStartHref(params);            
-        }
+    tocInit: function() {
+        var toc_doc = Alph.$("#alph-grammar-toc").get(0).contentDocument;
         
         // Add a click handler to the links in the toc: they set the 
         // src of the alph-latin-grammar-content iframe
-        Alph.$("a",toc_doc).click(Alph.Grammar.tocClickHandler);
+        Alph.$("a",toc_doc).click(Alph.LatinGrammar.tocClickHandler);
     
         // hide the subcontents of the toc headings
         Alph.$("div.contents",toc_doc).css("display","none");
@@ -88,15 +45,10 @@ Alph.Grammar = {
 
         
         // Add a click handler to the main toc headings
-        Alph.$("h2.contents",toc_doc).click(Alph.Grammar.tocheadClickHandler);
+        Alph.$("h2.contents",toc_doc).click(Alph.LatinGrammar.tocheadClickHandler);
         Alph.$("h2.contents",toc_doc).addClass("contents-closed");
 
         
-        // if a callback function was passed in in the window
-        // arguments, execute it
-        if (params && typeof params.callback == 'function') {
-            params.callback();
-        }
     },
     
     /**
@@ -106,26 +58,55 @@ Alph.Grammar = {
      */
     tocClickHandler: function(e)
     {
-        var toc_doc = Alph.$("#alph-latin-grammar-toc").get(0).contentDocument;
-        var href = Alph.$(this).attr("href");
-        var href_target = Alph.Grammar.lookupAnchor(href.substring(1));
-        if (href.indexOf('#') == 0 &&
-            Alph.$("a[name='"+href+"']").length==0 &&
-            typeof href_target != "undefined"
-            )
+        var toc_doc = Alph.$("#alph-grammar-toc").get(0).contentDocument;
+        var href = Alph.$(this).attr("href");        
+        // if the target of the link isn't found in the toc itself, look for it in the content
+        if (href.indexOf('#') == 0 && Alph.$("a[name='"+href+"']").length==0)
         {
-            Alph.$("#alph-latin-grammar-content").attr("src",
-                Alph.Grammar.BASE_URL +
-                href_target + href
-            );
-            //TODO we need to do a reload here - if you follow
-            // a link from the target and they try to re-access the original
-            // toc link, it doesn't work
+            var href_target = Alph.TeiGrammar.d_indexFile.findData(href.substring(1));
+            if (href_target)
+            {
+                // if multiple matches found, exact match should be 1st
+                var exact_match = href_target.split(/\n/)[0];
+                href_target = exact_match.split(Alph.TeiGrammar.d_indexFile.getSeparator(),2)[1];
+                Alph.$("#alph-grammar-content").attr("src",
+                    Alph.LatinGrammar.BASE_URL +
+                    href_target + href
+                );
+                //TODO we need to do a reload here - if you follow
+                // a link from the target and they try to re-access the original
+                // toc link, it doesn't work
+            }
         }
         Alph.$('.highlighted',toc_doc).removeClass('highlighted');
         Alph.$(this).addClass('highlighted');
         return true;
     },
+    
+    /**
+     * contentClickHandler
+     * Click handler to redirect anchor links in source content to the
+     * appropriate target file of the chunked grammar
+     */
+    contentClickHandler: function(e)
+    {
+        var href = Alph.$(this).attr("href");
+        if (href.indexOf('#') == 0 && Alph.$("a[name='"+href+"']").length==0)            
+        {
+            var href_target = Alph.TeiGrammar.d_indexFile.findData(href.substring(1));
+            if (href_target)
+            {
+                // if multiple matches found, exact match should be 1st
+                var exact_match = href_target.split(/\n/)[0];
+                href_target = exact_match.split(Alph.TeiGrammar.d_indexFile.getSeparator(),2)[1];
+                Alph.$(this).attr("href", 
+                    Alph.LatinGrammar.BASE_URL + 
+                    href_target + href);
+            }
+        } 
+        return true;
+    },
+
 
     /**
      * tocheadClickHandler
@@ -156,132 +137,7 @@ Alph.Grammar = {
         // prevent event propagation
         return false;
       
-    },
-    
-    /**
-     * contentClickHandler
-     * Click handler to redirect anchor links in source content to the
-     * appropriate target file of the chunked grammar
-     */
-    contentClickHandler: function(e)
-    {
-        var href = Alph.$(this).attr("href");
-        var href_target = 
-            Alph.Grammar.lookupAnchor(href.substring(1));
-        if (href.indexOf('#') == 0 &&
-            Alph.$("a[name='"+href+"']").length==0 &&
-            typeof href_target != "undefined"
-            )
-        {
-            Alph.$(this).attr("href", 
-                Alph.Grammar.BASE_URL + 
-                href_target + href);
-        } 
-        return true;
-    },
-
-    /**
-     * lookupAnchor
-     *   Arguments:
-     *      href: an anchor name referenced in url
-     *   Returns: a string containing the filename
-     *            which contains that anchor
-     */
-    lookupAnchor: function(href)
-    {
-        var anchor_map = this.getAnchorMap();
-        
-        var target;
-        if (anchor_map[href] != null)
-        {
-            target = anchor_map[href][0];
-        }
-        return target;
-    },
-    
-    /**
-     * loadAnchorMap
-     * Reads the anchor map file from the file system
-     * this maps named anchors to the file in which
-     * the anchor is found.
-     * Returns the anchor_map object
-     */
-    loadAnchorMap: function()
-    {
-        var file_contents = Alph.BrowserUtils.readFile(this.BASE_URL + "anchor_map");
-        var anchor_map;
-        try 
-        {
-            eval("anchor_map=" + file_contents);
-        } 
-        catch(exception)
-        {
-            this.s_logger.error("Could not process grammar anchor_map: " + exception);
-            this.s_logger.error(file_contents);
-        }
-        
-        return anchor_map;
-    },
-    
-    /**
-     * getAnchorMap
-     * Retrieves the anchor map from the browser's alpheios object
-     * Calls loadAnchorMap to load it if it hasn't already been
-     * initialized.
-     */
-    getAnchorMap: function() 
-    {
-        // if we're running directly in the chrome
-        // i.e. for testing, just load and return the anchor map
-        if (opener == null) 
-        {
-            return this.loadAnchorMap();
-        }
-        var bro = opener.Alph.Main.getCurrentBrowser();
-        if (typeof bro.alpheios.latin == "undefined" ||
-            typeof bro.alpheios.latin.grammar_anchor_map == "undefined")
-        {
-            
-            // make sure the latin namespace in the alpheios object
-            // has been defined
-            if (typeof bro.alpheios.latin == "undefined")
-            {
-                bro.alpheios.latin = {};            
-            }
-            bro.alpheios.latin.grammar_anchor_map = this.loadAnchorMap();
-        }
-    
-        return bro.alpheios.latin.grammar_anchor_map; 
-    },
-    
-    /**
-     * setStartHref - set the location for the content window
-     * Arguments:
-     *  params: object containing a target_href property 
-     *          which specifies the name of the target anchor in the 
-     *          grammar
-     */
-    setStartHref: function(params)
-     {
-        // pick up the original target href for the grammar from the
-        // window arguments
-        // otherwise set it to the preface
-        // and reset the contents of the grammar content browser
-        var start_href = 
-                params != null && params.target_href ? 
-                params.target_href  : 
-                'preface';
-        
-        var start_href_target = Alph.Grammar.lookupAnchor(start_href);
-        if (typeof start_href_target != "undefined")
-        {
-            Alph.$("#alph-latin-grammar-content").attr("src", 
-                Alph.Grammar.BASE_URL + 
-                start_href_target + 
-                "#" + start_href
-            );
-        }
-     }
+    }    
 }
 
 
