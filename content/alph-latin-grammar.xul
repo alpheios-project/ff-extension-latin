@@ -9,18 +9,20 @@
 <window id="alph-latin-grammar" title="&alpheios.latin.grammar.title;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         windowtype="alph-window"
-        onload="Alph.Grammar.onLoad();">
+        onload="Alph.TeiGrammar.onLoad('alph-index-bennett',Alph.LatinGrammar);">
     <script type="application/x-javascript" src="chrome://alpheios/content/alpheios-utils.js" />
+    <script type="application/x-javascript" src="chrome://alpheios/content/alpheios-tei-grammar.js" />
     <script type="application/x-javascript" src="chrome://alpheios-latin/content/alph-latin-grammar.js" />
 
+
     <hbox flex="100">
-        <iframe id="alph-latin-grammar-toc" 
+        <iframe id="alph-grammar-toc" 
                     src="chrome://alpheios-latin/content/grammar/toc.htm"
                     flex="1"/>
         <splitter collapse="before">
             <grippy/>
         </splitter> 
-        <browser id="alph-latin-grammar-content"
+        <browser id="alph-grammar-content"
                  type="content-primary"
                  src="about:blank"
                  flex="10"
