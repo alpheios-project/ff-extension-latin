@@ -24,6 +24,7 @@
         </splitter> 
         <browser id="alph-grammar-content"
                  type="content-primary"
+                 disablehistory="true"
                  src="about:blank"
                  flex="10"
                  width="90%"/>
