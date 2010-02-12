@@ -24,3 +24,4 @@ pref("extensions.alpheios.latin.dictionary.full.search.lemma_param","l");
 pref("extensions.alpheios.latin.dictionary.full.search.id_param","n");
 pref("extensions.alpheios.latin.dictionary.full.search.multiple",true);
 pref("extensions.alpheios.latin.sites.autoenable","http://www.thelatinlibrary.com,http://thelatinlibrary.com");
+pref("extensions.alpheios.latin.url.speech", 'http://localhost:8200/speech?voice=la+f1?word=<WORD>');
