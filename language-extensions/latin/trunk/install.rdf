@@ -27,7 +27,8 @@
 		<em:iconURL>chrome://alpheios/skin/icons/alpheios_32.ico</em:iconURL>
 		<em:homepageURL>http://alpheios.net</em:homepageURL>
 		<em:optionsURL>chrome://alpheios/content/alpheios-prefs.xul</em:optionsURL>
-		
+		<em:updateURL>http://alpheios.net/xpi-updates/update.rdf</em:updateURL>     
+		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOd5Mjthp4ZkEF0g6sF6fHbUb92PJTSSPxjjdsuDOXG9dUTVwIDjW183lTZawP7+4E8PmUeqVl5GCjKRCAhAXmSV+X/IYgSuiTOTjuXUJ/ylA9EGSo2dHVeGJ834XIKe5NK7NL08EFxst58vCASTViuMv5GpeIYtPvbj7PyXJ82QIDAQAB</em:updateKey>		
 		
         <em:requires>
             <Description>
