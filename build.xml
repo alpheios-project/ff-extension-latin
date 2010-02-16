@@ -98,7 +98,7 @@
 	-->
 	<target name="dist" depends="clean,get-extras,inc-build-id,package">
 		
-		<!-- commit the install.rdf and version.properties
+		<!-- commit the version.properties
 		     into SVN to increment its SVN revision and 
 		     update the build id so that future builds get a
 		     new svn revision/build id combo. Also include
@@ -111,8 +111,7 @@
 		
 		<svn>
 			<commit message="post-build-auto-increment">
-			<fileset dir="${basedir}">
-					<include name="install.rdf"/>
+			<fileset dir="${basedir}">					
 					<include name="version.properties"/>
 					<include name="${dist.dir}/${package}"/>
 				</fileset>
@@ -191,10 +190,10 @@
         </replaceregexp>
         <svn>
 	        <commit message="pre-build-auto-increment" 
-	                file="${basedir}/install.rdf"/>
+	                file="${basedir}/version.properties"/>
 	    </svn>
         <svn>
-    	    <status path="${basedir}/install.rdf" 
+    	    <status path="${basedir}/version.properties" 
     	  	       revisionProperty="svn.revision" />
     	</svn>
     	<echo>Updating version properties to New SVN Revision: ${svn.revision}</echo>
@@ -210,7 +209,7 @@
     -->	
 	<target name="update-version">
 		<svn>
-		   <status path="${basedir}/install.rdf" revisionProperty="svn.revision" />
+		   <status path="${basedir}/version.properties" revisionProperty="svn.revision" />
 		</svn>
 		<echo>Updating version.properties with SVN Revision: ${svn.revision}</echo>
 		        
