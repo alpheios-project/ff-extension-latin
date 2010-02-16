@@ -165,7 +165,7 @@ function makeInflQuery(a_elem,a_pofs,a_ans,a_callback)
                             '<input type="radio" name="' + attname + 
                             '"  value="' + a_att + '"/>' + 
                             '<span class="attribute">'  +
-                            getString(a_att).replace(/_/,' ') + 
+                            getString(a_att,"full.").replace(/_/,' ') + 
                             '</span></label><br/>\n';
                             
                     }
@@ -612,34 +612,44 @@ function replaceString(a_elem,a_props)
  * @ignore
  * get a string from properties
  */
-function getString(a_text)
+function getString(a_text,a_prefix)
 {
     a_text = jQuery.trim(a_text);
     var newtext = ''; 
+    if (a_prefix)
     try 
     {
-        newtext = $("#alph-infl-strings").get(0).getString(a_text);
+        newtext = $("#alph-infl-strings").get(0).getString(a_prefix + a_text);
     }
-    catch(e)
+    catch(a_e) {}
+    if (newtext == '')
     {
-        // try splitting into multiple strings
-        if (a_text.match(/\s+/))
+        try
         {
-            var replaced = [];
-            try 
-            { 
-                a_text.split(/\s+/).forEach(
-                    function(a_str)
-                    {
-                            replaced.push(
-                                $("#alph-infl-strings").get(0).getString(a_str));             
-                    }
-                );
-                newtext = replaced.join(' ');
-             }
-            catch(a_e)
+            newtext = $("#alph-infl-strings").get(0).getString(a_text);
+        }
+    
+        catch(e)
+        {
+            // try splitting into multiple strings
+            if (a_text.match(/\s+/))
             {
-                // quietly ignore errors retrieving strings not found in properties
+                var replaced = [];
+                try 
+                { 
+                    a_text.split(/\s+/).forEach(
+                        function(a_str)
+                        {
+                                replaced.push(
+                                    $("#alph-infl-strings").get(0).getString(a_str));             
+                        }
+                    );
+                    newtext = replaced.join(' ');
+                 }
+                catch(a_e)
+                {
+                    // quietly ignore errors retrieving strings not found in properties
+                }
             }
         }
     }
