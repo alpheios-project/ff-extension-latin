@@ -7,9 +7,9 @@
 #alph-infl-table caption,   
 #alph-query-frame .answer,
 g text,
-*:lang(la), 
-*:lang(la),
-*.latin 
+#alph-window *:lang(la), 
+#alph-window *:lang(la),
+#alph-window *.latin 
 {
     font-family: Georgia, "New Athena Unicode", "Arial Unicode MS", sans-serif;
 }
