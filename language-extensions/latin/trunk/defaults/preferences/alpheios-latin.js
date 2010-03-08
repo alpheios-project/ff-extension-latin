@@ -1,6 +1,6 @@
 pref("extensions.alpheios.latin.usemhttpd", true);
 pref("extensions.alpheios.latin.chromepkg","alpheios-latin");
-pref("extensions.alpheios.latin.languagecode","la");
+pref("extensions.alpheios.latin.languagecode","la,lat");
 pref("extensions.alpheios.latin.base_unit","word");
 pref("extensions.alpheios.latin.context_handler","grammarContext");
 pref("extensions.alpheios.latin.methods.convert",'latinToAscii');
