@@ -2,7 +2,7 @@
  * @fileoverview Latin extension of Alph.LanguageTool class
  * @version $Id: alpheios-latin-langtool.js 439 2008-03-27 00:26:41Z BridgetAlmas $
  *
- * Copyright 2008-2009 Cantus Foundation
+ * Copyright 2008-2010 Cantus Foundation
  * http://alpheios.net
  *
  * Uses Whitaker's WORDS Latin-English Dictionary Program
@@ -387,51 +387,6 @@ Alph.LanguageTool_Latin.prototype.observePrefChange = function(a_name,a_value)
         this.loadLexIds();
         this.lexiconSetup();
     }
-
-}
-
-/**
- * Latin-specific startup method in the derived instance which
- * loads the lemma id lookup file.
- * @returns true if successful, otherwise false
- * @type boolean
- */
-Alph.LanguageTool_Latin.prototype.loadLexIds = function()
-{
-    this.d_fullLexCode =
-        Alph.BrowserUtils.getPref("dictionaries.full",this.d_sourceLanguage)
-
-    var content_url = Alph.BrowserUtils.getContentUrl(this.d_sourceLanguage);
-    if (this.d_fullLexCode == '' || this.d_fullLexCode == null)
-    {
-        this.d_idsFile == null;
-    }
-    else
-    {
-        try
-        {
-           this.d_idsFile =
-                new Alph.Datafile(content_url + "/dictionaries/" +
-                                  this.d_fullLexCode +
-                                  "/lat-" +
-                                  this.d_fullLexCode +
-                                  "-ids.dat",
-                                  "UTF-8");
-            this.s_logger.info("Loaded Latin ids [" +
-                          this.d_idsFile.getData().length +
-                          " bytes]");
-        }
-        catch (ex)
-        {
-            // the ids file might not exist, in particular for remote, non-alpheios
-            // provided dictionaries
-            // so just quietly log the error in this case
-            // later code must take a null ids file into account
-            this.s_logger.error("error loading ids: " + ex);
-            return false;
-        }
-    }
-    return true;
 }
 
 /**
@@ -441,8 +396,8 @@ Alph.LanguageTool_Latin.prototype.loadLexIds = function()
 Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
 {
     var langObj = this;
-    var ids = this.d_idsFile;
-    var fullLex = this.d_fullLexCode;
+    var ids = this.d_idsFile[0];
+    var fullLex = this.d_fullLexCode[0];
     Alph.$(".alph-entry", a_node).each(
         function()
         {
@@ -491,18 +446,22 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
  */
 Alph.LanguageTool_Latin.prototype.getLemmaId = function(a_lemmaKey)
 {
-    // get data from ids file
-    var lemma_data =
-            Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.d_idsFile);
-    if (!lemma_data[1])
+    // for each lexicon
+    for (var i = 0; i < this.d_fullLexCode.length; ++i)
     {
-        this.s_logger.warn("id for " +
-                      a_lemmaKey +
-                      " not found [" +
-                      this.d_fullLexCode + ']');
+        // get data from ids file
+        var lemma_id =
+            Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.d_idsFile[i]);
+        if (lemma_id)
+            return Array(lemma_id, this.d_fullLexCode[i]);
     }
 
-    return Array(lemma_data[1], this.d_fullLexCode);
+    this.s_logger.warn("id for " +
+                  a_lemmaKey +
+                  " not found [" +
+                  this.d_fullLexCode.join() + ']');
+
+    return Array(null, null);
 }
 
 /**
