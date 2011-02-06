@@ -19,7 +19,7 @@ pref("extensions.alpheios.latin.features.alpheios-grammar",true);
 pref("extensions.alpheios.latin.panels.use.defaults",true);
 pref("extensions.alpheios.latin.dictionaries.full","ls");
 pref("extensions.alpheios.latin.dictionary.full.search.url",
-     "http://repos.alpheios.net:8080/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=lat&out=html");
+     "http://repos1.alpheios.net/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=lat&out=html");
 pref("extensions.alpheios.latin.dictionary.full.search.lemma_param","l");
 pref("extensions.alpheios.latin.dictionary.full.search.id_param","n");
 pref("extensions.alpheios.latin.dictionary.full.search.multiple",true);
